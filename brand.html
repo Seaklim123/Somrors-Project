@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Brand</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -13,27 +12,24 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/brand.css">
 </head>
-
 <body>
+
     <!-- header -->
     <div>
-        <nav class="navbar navbar-expand-lg head-bg-color fixed-top">
+        <nav class="navbar navbar-expand-lg head-bg-color">
             <div class="container-fluid">
-                <form action="/search" method="GET" class="d-flex align-items-center">
+                <form class="d-flex" role="search">
                     <img src="images/logo.png" alt="Logo" class="logo">
-                    <div class="position-relative flex-grow-1">
-                        <input name="query" class="form-control pe-5 border-10" type="search" placeholder="Search" aria-label="Search" />
-                        <button class="btn position-absolute top-50 end-0 translate-middle-y border-0 bg-transparent me-2 px-3" type="submit">
-                            <i class="bi bi-search text-dark fs-5"></i>
-                        </button>
-                    </div>              
+                    <input class="form-control m-4" type="search" placeholder="Search" aria-label="Search" />
+                    <!-- <i class="bi bi-search search-icon"></i> -->
                 </form>
 
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active hover-color" aria-current="page" href="index.html"><b>Home</b></a>
+                            <a class="nav-link hover-color" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link hover-color" href="#">Products</a>
@@ -42,7 +38,7 @@
                             <a class="nav-link hover-color" href="#">Category</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link hover-color" href="brand.html">Brand</a>
+                            <a class="nav-link active hover-color" aria-current="page" href="brand.html"><b>Brand</b></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link hover-color" href="#">About us</a>
@@ -63,43 +59,21 @@
         </nav>
     </div>
 
-    <!-- body -->
-    <div>
-        <div id="carouselExampleRide" class="carousel slide mt-5" data-bs-ride="true">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="images/carousel/skin.webp" class="d-block carousel" alt="skin">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/carousel/produce2.png" class="d-block carousel" alt="produce2">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/carousel/produce3.webp" class="d-block carousel" alt="produce3">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </div>
+    <!-- bordy -->
+
     <div class="container mb-5">
         <div class="my-5 justify-content-center text-center">
-            <h2>Best Sellers</h2>
+            <h2>All Brands</h2>
+        </div>
+        <div class="d-flex justify-content-center mb-5 d-grid gap-2 d-md-flex text-center">
+           <a class="btn button-primary button-color-active" href="#" role="button">All Brands</a> 
+           <a class="btn button-primary" href="#" role="button">Link</a> 
+           <a class="btn button-primary" href="#" role="button">Link</a> 
+           <a class="btn button-primary" href="#" role="button">Link</a> 
+           <a class="btn button-primary" href="#" role="button">Link</a> 
+           <a class="btn button-primary" href="#" role="button">Link</a> 
+
+           
         </div>
         <div>
             <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -214,7 +188,7 @@
     </div>
         </div>
     </div>
-
+    
     <!-- footer -->
     <div class="footer mt-auto">
         <div class="container">
@@ -236,7 +210,5 @@
             </div>
         </div>
     </div>
-
 </body>
-
 </html>

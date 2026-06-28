@@ -1,0 +1,38 @@
+.hover-color:hover {
+    color: #F4C2C2;
+}
+
+.head-bg-color{
+    background-color: #F5F0ED;
+}
+
+.logo{
+    width: 100px;
+    height: 70px;
+}
+
+.search-bar{
+    width: 700px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.card-image{
+    height: 350px;
+    object-fit: cover;
+}
+
+.card-hight{
+    height: 550px;
+}
+
+.navbar-nav .nav-link.active {
+    color: #F4C2C2 !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #F4C2C2 !important;
+}
+
+
