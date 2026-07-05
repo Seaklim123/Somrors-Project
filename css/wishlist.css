@@ -1,0 +1,9 @@
+
+.hero{
+    margin-top: 85px;
+    background-color: #F4C2C2;
+    height: 200px;
+
+    display: flex;
+    align-items: center;
+}
