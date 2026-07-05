@@ -5,7 +5,8 @@ var products = [
         title: "product 1",
         text: "This is a longer card with supporting text below as a natural lead-in to additional content.",
         price: 10,
-        brand: "Laneige"
+        brand: "Laneige",
+        link: "brand.html"
     },
     { 
         id: 2,
@@ -43,7 +44,7 @@ var products = [
         id: 3,
         image: "images/best-seller/best3.jpg",
         title: "product 3",
-        text: "This is yet another longer card with supporting text below as a natural lead-in to additional content.",
+        text: "This is yet another longer card with supporting text below as a natural lead-in to additional content.yet another longer card with supporting text below as a natural lead-in to additional content.",
         price: 30,
         brand: "Torriden"
     }
@@ -59,21 +60,28 @@ products.forEach(product => {
         <div class="card card-hight" id="product-${product.id}">
             <img src="${product.image}" class="card-img-top card-image" alt="${product.title}">
             <div class="card-body">
-                <a class="nav-link active hover-color" aria-current="page" href="#">
+                <a class="nav-link active hover-color" aria-current="page" href="${product.link}">
                     <h5 class="card-title">${product.title}</h5>
                 </a>
-                <a class="nav-link hover-color" href="#">
-                    <p class="card-text text-clamp">${product.text}</p>
+                <a class="nav-link hover-color" href="${product.link}">
+                    <p class="card-text text-clamp-safe">${product.text}</p>
                 </a>
-                <div class="d-flex justify-content-between text-danger mt-3">
-                    <div class="justify-content-start icon-size">
-                        <p><i class="bi bi-currency-dollar text-danger"></i>${product.price}</p>
-                    </div>
-                    <div class="justify-content-end">
-                        <a class="hover-color text-dark icon-size" href="#"><i class="bi bi-cart3"></i></a>
-                        <a class="hover-color text-dark icon-size" href="#"><i class="bi bi-heart"></i></a>
-                    </div>
-                </div>
+                <div class="d-flex justify-content-between align-items-end text-danger mt-3">
+    <!-- Left Side: Price -->
+    <div class="icon-size mb-0">
+        <p class="m-0 d-flex align-items-center">
+            <i class="bi bi-currency-dollar text-danger"></i>
+            <span>${product.price}</span>
+        </p>
+    </div>
+    
+    <!-- Right Side: Icons -->
+    <div class="icon-size d-flex gap-2">
+        <a class="text-dark hover-color" href="#"><i class="bi bi-cart3"></i></a>
+        <a class="text-dark hover-color" href="#"><i class="bi bi-heart"></i></a>
+    </div>
+</div>
+
             </div>
         </div>
     `;
@@ -82,13 +90,4 @@ products.forEach(product => {
 });
 
 
-function filterProducts(products, brand) {
-    let filteredBrands = products.getAttribute('data-value');
-    if (brand === 'all') {
-        return products;
-    } else {
-        return products.filter(product => product.brand.toLowerCase() === brand.toLowerCase());
-    }
-}
 
-const filterButtons = document.querySelectorAll('.btn-filter');
