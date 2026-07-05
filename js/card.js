@@ -6,7 +6,7 @@ var products = [
         text: "This is a longer card with supporting text below as a natural lead-in to additional content.",
         price: 10,
         brand: "Laneige",
-        link: "brand.html"
+        link: "product-detail.html"
     },
     { 
         id: 2,
