@@ -1,14 +1,16 @@
 .hover-color:hover {
-    color: #F4C2C2;
+    color: #fc8383;
 }
 
 .head-bg-color{
     background-color: #F5F0ED;
+    
 }
 
 .logo{
-    width: 100px;
+    width: 200px;
     height: 70px;
+    object-fit: cover;
 }
 
 .search-bar{
@@ -28,11 +30,11 @@
 }
 
 .navbar-nav .nav-link.active {
-    color: #F4C2C2 !important;
+    color: #fc8383 !important;
 }
 
 .navbar-nav .nav-link:hover {
-    color: #F4C2C2 !important;
+    color: #fc8383 !important;
 }
 
 
