@@ -1,0 +1,15 @@
+.button-color-active {
+    background-color: #F4C2C2;
+    color: black;
+
+}
+
+.button-primary {
+    color: black;
+    border: 1px solid #F4C2C2;
+    &:hover {
+        background-color: #F4C2C2;
+        color: black;
+    }
+}
+

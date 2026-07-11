@@ -1,0 +1,50 @@
+.hover-color:hover {
+    color: #fc8383;
+}
+
+.hover-color:hover i {
+    color: #fc8383 !important;
+}
+
+.head-bg-color{
+    background-color: #F5F0ED;
+    
+}
+
+.logo{
+    width: 200px;
+    height: 70px;
+    object-fit: cover;
+}
+
+.search-bar{
+    width: 700px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.card-image{
+    height: 350px;
+    object-fit: cover;
+}
+
+.card-hight{
+    height: 550px;
+}
+
+.navbar-nav .nav-link.active {
+    color: #fc8383 !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #fc8383 !important;
+}
+
+.icon-size{
+    font-size: 1.5rem;
+}
+
+
+
+
