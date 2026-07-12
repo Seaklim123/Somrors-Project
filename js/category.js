@@ -6,19 +6,23 @@ const categories = [
   },
   {
       name: "Hair Products",
-      image: "images/category/shampoo.jpg"
+      image: "images/category/shampoo.jpg",
+      link: "chair.html"
   },
   {
       name: "Foam",
-      image: "images/category/foam.jpg"
+      image: "images/category/foam.jpg",
+      link: "cfoam.html"
   },
   {
       name: "Moisturizers",
-      image: "images/category/moisturizers.jpg"
+      image: "images/category/moisturizers.jpg",
+      link: "#"
   },
   {
       name: "Sunscream",
-      image: "images/category/sunscreen.jpg"
+      image: "images/category/sunscreen.jpg",
+      link: "#"
   },
   {
       name: "Teeth Whitening",
