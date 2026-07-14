@@ -1,3 +1,4 @@
+import { setupWishlist } from "./wistlist.js";
 var products = [
 <<<<<<< HEAD
   { 
@@ -176,11 +177,11 @@ productsToDisplay.forEach(product => {
             <div class="card-body d-flex flex-column p-3">
                 <div class="flex-grow-1 mb-3">
                     <a class="text-decoration-none text-dark hover-color d-block mb-1" href="${product.link || '#'}">
-                        <h5 class="card-title fs-6 fw-bold m-0">${product.title}</h5>
+                        <h5 class="card-title fs-6 fw-bold m-0 hover-color">${product.title}</h5>
                     </a>
                     <a class="text-decoration-none text-muted d-block" href="${product.link || '#'}">
                         <!-- Connected to your text-clamp CSS width rule -->
-                        <p class="card-text small text-clamp m-0">
+                        <p class="card-text small text-clamp m-0 hover-color">
                             ${product.text}
                         </p>
                     </a>
@@ -196,7 +197,7 @@ productsToDisplay.forEach(product => {
                     <!-- Action utility shopping icons wrapper -->
                     <div class="d-flex gap-3 fs-5 icon-size">
                         <a class="text-dark hover-color p-0" href="#" aria-label="Add to Cart"><i class="bi bi-cart3"></i></a>
-                        <a class="text-dark hover-color p-0" href="#" aria-label="Add to Wishlist"><i class="bi bi-heart"></i></a>
+                        <a class="text-dark hover-color p-0" aria-label="Add to Wishlist"><i class="bi bi-heart heart"></i></a>
                     </div>
                 </div>
             </div>
@@ -227,8 +228,11 @@ filterButtons.forEach(button => {
 
         const filteredData = filterProducts(selectedBrand);
         renderProducts(filteredData);
+
+        setupWishlist();
     };
 >>>>>>> fafe94ea59aec10184219fc428123ea8af981d07
 });
 
 renderProducts(products);
+setupWishlist();
