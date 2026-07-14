@@ -1,0 +1,270 @@
+/* ===========================
+   ACCOUNT PAGE
+=========================== */
+
+/* Body */
+body {
+    background-color: #fafafa;
+    font-family: "Segoe UI", sans-serif;
+    padding-top: 85px;
+}
+
+/* ===========================
+   HERO SECTION
+=========================== */
+
+.account-hero {
+    background: #f7d9d4;
+    padding: 45px 0;
+    margin-bottom: 30px;
+}
+
+.account-hero h2 {
+    font-weight: 700;
+    color: #4d2f2f;
+}
+
+.breadcrumb {
+    margin-bottom: 10px;
+}
+
+.breadcrumb-item a {
+    color: #666;
+    text-decoration: none;
+}
+
+.breadcrumb-item.active {
+    color: #8B3A3A;
+}
+
+/* ===========================
+   PROFILE CARD
+=========================== */
+
+.profile-card {
+    border: none;
+    border-radius: 18px;
+    background: #f3c4be;
+    box-shadow: 0 6px 18px rgba(0,0,0,.08);
+}
+
+.profile-card .card-body {
+    padding: 35px 20px;
+}
+
+.profile-img {
+    width: 95px;
+    height: 95px;
+    object-fit: cover;
+    border-radius: 50%;
+    background: white;
+    padding: 10px;
+    border: 4px solid white;
+    transition: .3s;
+}
+
+.profile-img:hover {
+    transform: scale(1.08);
+}
+
+.profile-card h5 {
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.profile-card p {
+    color: #666;
+}
+
+/* ===========================
+   ACCOUNT CARD
+=========================== */
+
+.account-card {
+    border-radius: 18px;
+    border: 1px solid #d9b1ac;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,.05);
+}
+
+.account-card .card-header {
+    background: #fbe4e1;
+    color: #8B3A3A;
+    font-weight: bold;
+    padding: 18px 25px;
+    border: none;
+}
+
+.edit-link {
+    color: #8B3A3A;
+    font-weight: 600;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.edit-link:hover {
+    color: #c55d5d;
+    text-decoration: underline;
+}
+
+/* ===========================
+   INFO ROWS
+=========================== */
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 25px;
+
+    border-bottom: 1px solid #ececec;
+
+    transition: .25s;
+}
+
+.info-row:hover {
+    background: #fff6f5;
+}
+
+.info-row span:first-child {
+    font-weight: 600;
+}
+
+.info-row span:last-child {
+    color: #666;
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+.form-label {
+    font-weight: 600;
+    color: #555;
+}
+
+.form-control {
+    border-radius: 12px;
+    border: 2px solid #efc7c3;
+    padding: 12px 15px;
+    transition: .3s;
+}
+
+.form-control:focus {
+    border-color: #d97b7b;
+    box-shadow: none;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.btn-dark {
+    border-radius: 30px;
+    padding: 10px 28px;
+    transition: .3s;
+}
+
+.btn-dark:hover {
+    transform: translateY(-2px);
+}
+
+.btn-outline-secondary {
+    border-radius: 30px;
+    padding: 10px 28px;
+    transition: .3s;
+}
+
+.btn-outline-secondary:hover {
+    transform: translateY(-2px);
+}
+
+.btn-pink {
+    background: #f3c4be;
+    color: #5d2e2e;
+    border-radius: 30px;
+    padding: 10px 30px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.btn-pink:hover {
+    background: #e9ada5;
+    color: #000;
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   CARD SPACING
+=========================== */
+
+.account-card + .account-card {
+    margin-top: 30px;
+}
+
+/* ===========================
+   ANIMATION
+=========================== */
+
+.profile-card,
+.account-card {
+    transition: .35s;
+}
+
+.profile-card:hover,
+.account-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0,0,0,.10);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 992px) {
+
+    .profile-card {
+        margin-bottom: 25px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .account-hero {
+        text-align: center;
+        padding: 35px 0;
+    }
+
+    .info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .btn-dark,
+    .btn-outline-secondary,
+    .btn-pink {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .profile-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .account-card .card-header {
+        padding: 15px 18px;
+    }
+
+    .info-row {
+        padding: 15px 18px;
+    }
+
+}

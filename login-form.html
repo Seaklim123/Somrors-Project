@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log In</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/wishlist.css" />
+    <link rel="stylesheet" href="css/login-form.css"/>
+  </head>
+
+<body>
+
+
+  <!-- header -->
+  <div>
+    <nav class="navbar navbar-expand-lg head-bg-color fixed-top">
+      <div class="container-fluid">
+        <form action="/search" method="GET" class="d-flex align-items-center">
+          <img src="images/logo-v.png" alt="Logo" class="logo" />
+          <div class="position-relative flex-grow-1">
+            <input
+              name="query"
+              class="form-control pe-5 border-10 bg-light"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button
+              class="btn position-absolute top-50 end-0 translate-middle-y border-0 bg-transparent me-2 px-3"
+              type="submit"
+            >
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link hover-color"
+                href="#"
+                >Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hover-color" href="#">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hover-color" href="#">Category</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hover-color" href="brand.html">Brand</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hover-color" href="#">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hover-color" href="#"
+                ><i class="bi bi-cart3"></i
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hover-color" href="#"
+                ><i class="bi bi-heart"></i
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active hover-color" aria-current="page" href="#"
+                ><b><i class="bi bi-person-circle"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Log In Form -->
+  <div class="login-form">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+          
+          <!-- Custom border color -->
+          <div class="card border rounded-3">
+            <div class="card-body p-5">
+
+              <!-- Logo -->
+              <div class="text-center mb-5">
+                <img src="images/logo-v.png" alt="Logo" class="logo" />
+              </div>
+
+              <!-- Log In Heading -->
+              <h2 class="text-center mb-4">Log In with Somrors</h2>
+                
+                <form action="#" method="POST" class="needs-validation" novalidate>
+
+                  <!-- Username Field -->
+                  <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
+                    <div class="invalid-feedback">Please enter your username.</div>
+                  </div>
+
+                  <!-- Email Field -->
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" required>
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                  </div>
+
+                  <!-- Password Field -->
+                  <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                    <div class="invalid-feedback">Please enter a password.</div>
+                  </div>
+
+                  <!-- Log In Button -->
+                  <div class="d-grid gap-2 mt-4">
+                    <button type="submit" class="btn btn-login">Log In</button>
+                  </div>
+
+                  <!-- Separator and Login Link -->
+                  <div class="text-center mt-4">
+                    <!-- The  separator -->
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="d-block mb-3 text-decoration-none forgot-password-link">Forget Password?</a>
+                    
+                    <!-- Don't have an account link -->
+                    <p class="mb-0">
+                      Don't have an account? <a href="signup-form.html" target="_blank" rel="noopener noreferrer" class="text-danger text-decoration-none">Sign Up here</a>
+                    </p>
+                  </div>
+
+                </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div class="footer mt-auto">
+      <div class="container">
+          <div class="d-flex justify-content-between"> 
+              <div class="d-flex flex-column">
+                  <h2>Follow Us</h2>
+                  <div><i class="bi bi-facebook"></i><span class="ps-3">Somros skin care</span></div>
+                  <div><i class="bi bi-telegram"></i><span class="ps-3">@Somros_skin_care</span></div>
+              </div>
+              <div class="d-flex flex-column gap-2">
+                  <h2>Contact us</h2>
+                  <div><i class="bi bi-telephone"></i><span class="ps-3">097 777 877 / 096 686 666</span></div>
+                  <div><i class="bi bi-envelope"></i><span class="ps-3">Somros@gmail.com</span></div>
+                  <div><i class="bi bi-map"></i><span class="ps-3">Somros@gmail.com</span></div>
+              </div>
+          </div>
+          <div class="text-center mt-3">
+              <p>&copy; 2024 Somros. All rights reserved.</p>
+          </div>
+      </div>
+  </div>
+
+  <script src="js/login-form.js"></script>
+</body>
+</html>
