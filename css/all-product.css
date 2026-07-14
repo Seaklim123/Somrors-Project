@@ -1,0 +1,62 @@
+/* Category Filter Control Buttons */
+.btn-filter {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    color: #4a4a4a;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-filter:hover {
+    background-color: #fcf9f8;
+    border-color: #fc8383;
+    color: #fc8383;
+}
+
+.active-filter {
+    background-color: #f3cfcc !important; 
+    border-color: #f3cfcc !important;
+    color: #2b2b2b !important;
+    font-weight: 500;
+}
+
+.product-card {
+    border: 1px solid #e2e2e2;
+    border-radius: 16px !important; 
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+    background-color: #ffffff;
+}
+
+.product-card:hover {
+    border-color: #fc8383;
+    box-shadow: 0 4px 15px rgba(252, 131, 131, 0.08);
+}
+
+.product-title-link {
+    text-decoration: none;
+    color: #2b2b2b;
+}
+
+.product-title-link h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    min-height: 45px; 
+}
+.product-card .card-text {
+    min-height: 42px; 
+}
+
+.price-tag {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2b2b2b;
+}
+
+

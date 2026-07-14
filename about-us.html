@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about-us.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100 bg-page">
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg head-bg-color fixed-top border-bottom">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/logo.png" alt="Logo" class="logo me-2" style="height: 70px;">
+                <span class="brand-text"></span>
+            </a>    
+
+            <form action="/search" method="GET" class="d-flex align-items-center flex-grow-1 max-w-search mx-4">
+                <div class="position-relative w-100">
+                    <input name="query" class="form-control pe-5 search-input" type="search" placeholder="Search"
+                        aria-label="Search" />
+                    <button class="btn position-absolute top-50 end-0 translate-middle-y border-0 bg-transparent me-2"
+                        type="submit">
+                        <i class="bi bi-search text-secondary"></i>
+                    </button>
+                </div>
+            </form>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav align-items-center gap-2">
+                    <li class="nav-item"><a class="nav-link hover-color" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link hover-color" href="all-products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link hover-color" href="#">Category</a></li>
+                    <li class="nav-item"><a class="nav-link hover-color" href="brand.html">Brand</a></li>
+                    <li class="nav-item"><a class="nav-link active-link" href="about-us.html"><b>About us</b></a></li>
+                    <li class="nav-item ms-lg-3"><a class="nav-link icon-link" href="#"><i
+                                class="bi bi-cart3 fs-5"></i></a></li>
+                    <li class="nav-item"><a class="nav-link icon-link" href="#"><i class="bi bi-heart fs-5"></i></a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link icon-link" href="#"><i
+                                class="bi bi-person-circle fs-5"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        <!-- Main Content -->
+<main class="container main-content-padding flex-grow-1" style="margin-top: 100px;">
+
+    <!-- Hero Image Banner -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="hero-image-container">
+                <!-- Image responsiveness -->
+                <img src="/images/carousel/skin.webp" alt="Somros Skincare Showcase" class="img-fluid hero-img">
+            </div>
+        </div>
+    </div>
+
+    <!-- Intro -->
+    <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-8">
+            <span class="text-uppercase tracking-wider small-title">About Somros</span>
+            <h1 class="serif-title mt-3 mb-3">Skincare for a softer, more confident everyday glow</h1>
+            <p class="lead-text">
+                Somros Skincare was created for people who want beauty routines to feel calm, caring, and easy to trust. 
+                We curate thoughtful products that support healthy-looking skin without making skincare feel complicated.
+            </p>
+        </div>
+    </div>
+
+    <!-- Our Story & Quote Section -->
+    <div class="row g-5 align-items-center mb-5">
+        <!-- Story Column -->
+        <div class="col-md-7">
+            <h2 class="serif-title mb-4">Our story</h2>
+            <p class="body-text mb-3">
+                The name Somros reflects timeless beauty and a radiant complexion. Our journey began with a simple belief: 
+                when products are chosen with care, a skincare routine can become a small act of confidence every day.
+            </p>
+            <p class="body-text">
+                We look for formulas and essentials that feel gentle, practical, and worth returning to so every customer 
+                can build a routine that feels personal, balanced, and beautifully uncomplicated.
+            </p>
+        </div>
+        
+        <!-- Quote Card Column -->
+        <div class="col-md-5">
+            <div class="quote-card p-5 rounded-4 position-relative">
+                <i class="bi bi-quote quote-icon"></i>
+                <p class="quote-text mt-3">
+                    We believe great skincare should make you feel looked after before it ever asks you to change.
+                </p>
+            </div>
+        </div>
+    </div>
+
+        <!-- What We Believe -->
+        <div class="text-center mb-4 mt-5">
+            <h2 class="serif-title">What we believe</h2>
+        </div>
+
+        <div class="row g-4 mb-5">
+            <div class="col-lg-4 col-md-6">
+                <!-- Border -->
+                <div class="belief-card h-100 border border-secondary-subtle rounded-3 p-4 bg-white">
+                    <i class="bi bi-heart fs-4 text-dark mb-3 d-block"></i>
+                    <h5 class="fw-bold mb-2">Gentle care first</h5>
+                    <p class="text-secondary small mb-0">
+                        We prioritize products that support skin comfort,
+                        consistency, and everyday confidence.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="belief-card h-100 border border-secondary-subtle rounded-3 p-4 bg-white">
+                    <i class="bi bi-shield-check fs-4 text-dark mb-3 d-block"></i>
+                    <h5 class="fw-bold mb-2">Thoughtfully chosen</h5>
+                    <p class="text-secondary small mb-0">
+                        Every shelf and recommendation is guided by
+                        quality, usefulness, and care.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12">
+                <div class="belief-card h-100 border border-secondary-subtle rounded-3 p-4 bg-white">
+                    <i class="bi bi-stars fs-4 text-dark mb-3 d-block"></i>
+                    <h5 class="fw-bold mb-2">Glow that feels natural</h5>
+                    <p class="text-secondary small mb-0">
+                        Our goal is skin that looks healthy,
+                        fresh and unmistakably your own.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Our Promise Box -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="promise-box p-5 text-center rounded-3" style="background-color: #f7f4f2;">
+                    <h2 class="serif-title mb-3">Our promise</h2>
+                    <p class="text-secondary max-w-md mx-auto">
+                        To make skincare feel warm, reliable and simple—with
+                        products and guidance that help you care for your skin
+                        beautifully, day after day.
+                    </p>
+                </div>
+            </div>
+        </div>
+</main>
+
+    </main> 
+
+    <!-- footer -->
+    <div class="footer bg-footer-custom mt-auto py-5 w-100">
+        <div class="container">
+            <div class="d-flex justify-content-between"> 
+                <div class="d-flex flex-column gap-2">
+                    <h2>Follow Us</h2>
+                    <div class="d-flex align-items-center"><i class="bi bi-facebook"></i><span class="ps-3">Somrors skin care</span></div>
+                    <div class="d-flex align-items-center"><i class="bi bi-telegram"></i><span class="ps-3">@Somrors_skin_care</span></div>
+                </div>
+                <div class="d-flex flex-column gap-2">
+                    <h2>Contact us</h2>
+                    <div class="d-flex align-items-center"><i class="bi bi-telephone"></i><span class="ps-3">097 777 877 / 096 686 666</span></div>
+                    <div class="d-flex align-items-center"><i class="bi bi-envelope"></i><span class="ps-3">Somrors@gmail.com</span></div>
+                    <div class="d-flex align-items-center"><i class="bi bi-map"></i><span class="ps-3">Somrors@gmail.com</span></div>
+                </div>
+            </div>
+            <div class="text-center mt-4 pt-3 border-top border-dark border-opacity-10">
+                <p class="mb-0">&copy; 2024 Somrors. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
