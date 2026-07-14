@@ -1,3 +1,4 @@
+import { setupWishlist } from "./wistlist.js";
 var products = [
     { 
         id: 1,
@@ -69,10 +70,10 @@ productCol.innerHTML = `
             <!-- Content Block (Title + Text) fills the remaining top space -->
             <div class="flex-grow-1 mb-3">
                 <a class="text-decoration-none text-dark hover-color d-block mb-1" href="${product.link}">
-                    <h5 class="card-title fs-6 fw-bold m-0">${product.title}</h5>
+                    <h5 class="card-title fs-6 fw-bold m-0 hover-color">${product.title}</h5>
                 </a>
                 <a class="text-decoration-none text-muted d-block" href="${product.link}">
-                    <p class="card-text small text-clamp-safe m-0" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                    <p class="card-text hover-color small text-clamp-safe m-0" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
                         ${product.text}
                     </p>
                 </a>
@@ -90,9 +91,9 @@ productCol.innerHTML = `
                     <a class="text-secondary hover-color transition-all" href="#" aria-label="Add to Cart">
                         <i class="bi bi-cart3"></i>
                     </a>
-                    <a class="text-secondary hover-color transition-all" href="#" aria-label="Add to Wishlist">
-                        <i class="bi bi-heart"></i>
-                    </a>
+                    <button class="border-0 bg-transparent text-secondary hover-color transition-all" aria-label="Add to Wishlist">
+                        <i class="bi bi-heart heart"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -102,6 +103,10 @@ productCol.innerHTML = `
 
     productContainer.appendChild(productCol);
 });
+
+setupWishlist();
+
+
 
 
 

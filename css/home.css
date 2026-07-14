@@ -37,4 +37,14 @@
   word-break: break-word; 
 }
 
+.heart {
+    color: #6c757d;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.heart.active {
+    color: var(--bs-danger);
+}
+
 
