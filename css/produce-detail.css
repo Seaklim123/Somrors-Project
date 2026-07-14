@@ -1,0 +1,59 @@
+
+.image{
+    height: 100%;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 30px;
+    border-radius: 15px;
+   
+
+}
+
+.padding{
+    padding-top: 100px;
+    padding-bottom: 40px;
+}
+
+.buyingplace{
+    border-radius: 15px;
+    background-color: #e6e7e6ac;
+    
+    width: 100%; 
+    max-width: 400px; 
+    
+    min-height: 100px;
+    padding: 20px;
+    margin-top: 60px; 
+}  
+
+.title{
+    margin-right: 0px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.detail{ 
+    margin-left: 0px;
+    margin-top: 60px;
+    font-size: 20px;
+    
+}
+
+.bg-color{
+    background-color: #F4C2C2;
+}
+
+.byandtype{
+    color: rgb(109, 109, 109);
+    font-style: italic;
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+.price{
+    font-size: 40px;
+    margin-top: 20px;
+    margin-left: 30%;
+
+}
+

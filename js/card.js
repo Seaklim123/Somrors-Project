@@ -5,7 +5,8 @@ var products = [
         title: "product 1",
         text: "This is a longer card with supporting text below as a natural lead-in to additional content.",
         price: 10,
-        brand: "Laneige"
+        brand: "Laneige",
+        link: "product-detail.html"
     },
     { 
         id: 2,
@@ -53,42 +54,54 @@ const productContainer = document.getElementById('product-container');
 
 products.forEach(product => {
     const productCol = document.createElement('div');
-    productCol.classList.add('col');
-    
-    productCol.innerHTML = `
-        <div class="card card-hight" id="product-${product.id}">
-            <img src="${product.image}" class="card-img-top card-image" alt="${product.title}">
-            <div class="card-body">
-                <a class="nav-link active hover-color" aria-current="page" href="#">
-                    <h5 class="card-title">${product.title}</h5>
+// FIX: Changed col-lg-3 to col-lg-4 to force exactly 3 cards per row on desktop viewports
+productCol.className = 'col-12 col-sm-6 col-md-4 col-lg-4 mb-4';
+
+productCol.innerHTML = `
+    <div class="card h-100 shadow-sm border" id="product-${product.id}">
+        <!-- Image Container with a fixed aspect ratio wrapper -->
+        <div class="position-relative overflow-hidden bg-light" style="padding-top: 100%;">
+            <img src="${product.image}" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" alt="${product.title}">
+        </div>
+        
+        <!-- Card Body utilizing Flexbox distribution -->
+        <div class="card-body d-flex flex-column p-3">
+            <!-- Content Block (Title + Text) fills the remaining top space -->
+            <div class="flex-grow-1 mb-3">
+                <a class="text-decoration-none text-dark hover-color d-block mb-1" href="${product.link}">
+                    <h5 class="card-title fs-6 fw-bold m-0">${product.title}</h5>
                 </a>
-                <a class="nav-link hover-color" href="#">
-                    <p class="card-text text-clamp">${product.text}</p>
+                <a class="text-decoration-none text-muted d-block" href="${product.link}">
+                    <p class="card-text small text-clamp-safe m-0" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                        ${product.text}
+                    </p>
                 </a>
-                <div class="d-flex justify-content-between text-danger mt-3">
-                    <div class="justify-content-start icon-size">
-                        <p><i class="bi bi-currency-dollar text-danger"></i>${product.price}</p>
-                    </div>
-                    <div class="justify-content-end">
-                        <a class="hover-color text-dark icon-size" href="#"><i class="bi bi-cart3"></i></a>
-                        <a class="hover-color text-dark icon-size" href="#"><i class="bi bi-heart"></i></a>
-                    </div>
+            </div>
+            
+            <!-- Bottom Action Row: Standardized padding and vertical centering -->
+            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+                <!-- Price Tag -->
+                <div class="fs-5 fw-bold text-danger d-flex align-items-center">
+                    <span class="small me-0.5">$</span><span>${product.price}</span>
+                </div>
+                
+                <!-- Quick Actions Icons -->
+                <div class="d-flex gap-3 fs-5">
+                    <a class="text-secondary hover-color transition-all" href="#" aria-label="Add to Cart">
+                        <i class="bi bi-cart3"></i>
+                    </a>
+                    <a class="text-secondary hover-color transition-all" href="#" aria-label="Add to Wishlist">
+                        <i class="bi bi-heart"></i>
+                    </a>
                 </div>
             </div>
         </div>
-    `;
-    
+    </div>
+`;
+
+
     productContainer.appendChild(productCol);
 });
 
 
-function filterProducts(products, brand) {
-    let filteredBrands = products.getAttribute('data-value');
-    if (brand === 'all') {
-        return products;
-    } else {
-        return products.filter(product => product.brand.toLowerCase() === brand.toLowerCase());
-    }
-}
 
-const filterButtons = document.querySelectorAll('.btn-filter');
