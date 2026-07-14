@@ -3,3 +3,16 @@
   margin-bottom: 35px;
   box-shadow: rgba(234, 178, 165, 0.1) 0px 4px 12px;
 }
+
+.login-form .card {
+  border-color: #EAB2A5 !important;
+}
+
+.login-form .btn-login {
+  background-color: rgb(244, 194, 194);
+  color: white;
+}
+
+.login-form .forgot-password-link {
+  color: rgb(105, 32, 35);
+}

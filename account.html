@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Account</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/wishlist.css" />
+    <link rel="stylesheet" href="css/account.css" />
+  </head>
+
+  <body>
+    <!-- ================= HEADER ================= -->
+
+    <nav class="navbar navbar-expand-lg head-bg-color fixed-top">
+      <div class="container-fluid">
+        <form action="/search" method="GET" class="d-flex align-items-center">
+          <img src="images/logo-v.png" alt="Logo" class="logo" />
+
+          <div class="position-relative flex-grow-1">
+            <input
+              name="query"
+              class="form-control pe-5 border-10 bg-light"
+              type="search"
+              placeholder="Search"
+            />
+
+            <button
+              class="btn position-absolute top-50 end-0 translate-middle-y border-0 bg-transparent me-2 px-3"
+            >
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link hover-color" href="index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link hover-color" href="products.html">Products</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link hover-color" href="category.html">Category</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link hover-color" href="brand.html">Brand</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link hover-color" href="about.html">About Us</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link hover-color" href="cart.html">
+                <i class="bi bi-cart3"></i>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link hover-color" href="wishlist.html">
+                <i class="bi bi-heart"></i>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active hover-color" href="my-account.html">
+                <i class="bi bi-person-circle"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="account-hero">
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="index.html">Home</a>
+            </li>
+
+            <li class="breadcrumb-item active">My Account</li>
+          </ol>
+        </nav>
+
+        <h2 class="fw-bold">My Account</h2>
+      </div>
+    </section>
+
+    <!-- ================= ACCOUNT SECTION ================= -->
+
+    <section class="container my-5">
+      <div class="row g-4">
+        <!-- LEFT -->
+
+        <div class="col-lg-3">
+          <div class="card profile-card">
+            <div class="card-body text-center">
+              <img
+                src="images/user-account/Icon User.png"
+                class="profile-img mb-3"
+                alt="User"
+              />
+
+              <h5 class="fw-bold">User's Name</h5>
+
+              <p class="text-muted mb-0">user@gmail.com</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="col-lg-9">
+          <div class="card account-card">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <h5 class="mb-0">Personal Information</h5>
+
+              <a href="#" class="edit-link"> Edit </a>
+            </div>
+
+            <div class="card-body p-0">
+              <div class="info-row">
+                <span>Username</span>
+
+                <span>User's Name</span>
+              </div>
+
+              <div class="info-row">
+                <span>Phone Number</span>
+
+                <span>012345678</span>
+              </div>
+
+              <div class="info-row border-0">
+                <span>Email</span>
+
+                <span>user@gmail.com</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- EDIT FORM -->
+
+          <div class="card account-card mt-4">
+            <div class="card-header">Edit Personal Information</div>
+
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label"> Username </label>
+
+                  <input type="text" class="form-control" value="User's Name" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label class="form-label"> Phone Number </label>
+
+                  <input type="text" class="form-control" value="012345678" />
+                </div>
+
+                <div class="col-12 mb-4">
+                  <label class="form-label"> Email </label>
+
+                  <input
+                    type="email"
+                    class="form-control"
+                    value="user@gmail.com"
+                  />
+                </div>
+
+                <div class="col-12">
+                  <button class="btn btn-dark rounded-pill px-4" id="saveBtn">
+                    Save
+                  </button>
+
+                  <button
+                    class="btn btn-outline-secondary rounded-pill px-4 ms-2"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- CHANGE PASSWORD -->
+
+          <div class="card account-card mt-4">
+            <div class="card-header">Change Password</div>
+
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label class="form-label"> Current Password </label>
+
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Enter current password"
+                  />
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label class="form-label"> New Password </label>
+
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Enter new password"
+                  />
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label class="form-label"> Confirm Password </label>
+
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Confirm password"
+                  />
+                </div>
+
+                <div class="col-12">
+                  <button
+                    class="btn btn-pink rounded-pill px-4"
+                    id="updatePassword"
+                  >
+                    Update Password
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <div class="footer mt-auto">
+      <div class="container">
+        <div class="d-flex justify-content-between flex-wrap">
+          <div class="d-flex flex-column">
+            <h2>Follow Us</h2>
+
+            <div>
+              <i class="bi bi-facebook"></i>
+
+              <span class="ps-3"> Somros skin care </span>
+            </div>
+
+            <div>
+              <i class="bi bi-telegram"></i>
+
+              <span class="ps-3"> @Somros_skin_care </span>
+            </div>
+          </div>
+
+          <div class="d-flex flex-column gap-2">
+            <h2>Contact us</h2>
+
+            <div>
+              <i class="bi bi-telephone"></i>
+
+              <span class="ps-3"> 097 777 877 / 096 686 666 </span>
+            </div>
+
+            <div>
+              <i class="bi bi-envelope"></i>
+
+              <span class="ps-3"> Somros@gmail.com </span>
+            </div>
+
+            <div>
+              <i class="bi bi-geo-alt"></i>
+
+              <span class="ps-3"> Phnom Penh, Cambodia </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <p>&copy; 2024 Somros. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/account.js"></script>
+  </body>
+</html>

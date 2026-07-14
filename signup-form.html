@@ -101,7 +101,8 @@
         <div class="col-md-6 col-lg-5">
           
           <!-- Custom border color -->
-          <div class="card border rounded-3" style="border-color: #EAB2A5 !important;">
+
+          <div class="card border rounded-3">
             <div class="card-body p-5">
 
               <!-- Logo -->
@@ -151,13 +152,13 @@
 
                   <!-- Sign Up Button -->
                   <div class="d-grid gap-2 mt-4">
-                    <button type="submit" class="btn" style="background-color: black; color: white">Sign Up</button>
+                    <button type="submit" class="btn btn-login">Sign Up</button>
                   </div>
 
                   <!-- Separator and Login Link -->
                   <div class="text-center mt-4">
                     <!-- The OR separator -->
-                    <p class="large mb-3" style="color: rgb(150, 146, 146)">OR</p>
+                    <p class="large mb-3 or-separator">OR</p>
                     
                     <!-- Already have an account link -->
                     <p class="mb-0">
@@ -196,34 +197,6 @@
       </div>
   </div>
 
-  <script>
-    const pw = document.getElementById('password')
-    const confirmPw = document.getElementById('confirmPassword')
-
-    function validatePasswordMatch() {
-      confirmPw.setCustomValidity(pw.value !== confirmPw.value ? "Passwords don't match." : "")
-    }
-
-    pw.addEventListener('input', validatePasswordMatch)
-    confirmPw.addEventListener('input', validatePasswordMatch)
-  </script>
-
-  <script>
-    (() => {
-      'use strict'
-      const forms = document.querySelectorAll('.needs-validation')
-      Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
-          validatePasswordMatch() // re-check right before validity is evaluated
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-          form.classList.add('was-validated')
-        }, false)
-      })
-    })()
-  </script>
-
+  <script src="js/signup-form.js"></script>
 </body>
 </html>

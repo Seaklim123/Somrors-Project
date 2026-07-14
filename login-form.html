@@ -101,7 +101,7 @@
         <div class="col-md-6 col-lg-5">
           
           <!-- Custom border color -->
-          <div class="card border rounded-3" style="border-color: #EAB2A5 !important;">
+          <div class="card border rounded-3">
             <div class="card-body p-5">
 
               <!-- Logo -->
@@ -137,13 +137,13 @@
 
                   <!-- Log In Button -->
                   <div class="d-grid gap-2 mt-4">
-                    <button type="submit" class="btn" style="background-color: black; color: white">Log In</button>
+                    <button type="submit" class="btn btn-login">Log In</button>
                   </div>
 
                   <!-- Separator and Login Link -->
                   <div class="text-center mt-4">
                     <!-- The  separator -->
-                    <a href="#" class="d-block mb-3 text-decoration-none" style="color: rgb(105, 32, 35)">Forget Password?</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="d-block mb-3 text-decoration-none forgot-password-link">Forget Password?</a>
                     
                     <!-- Don't have an account link -->
                     <p class="mb-0">
@@ -182,24 +182,6 @@
       </div>
   </div>
 
-  <script>
-    (() => {
-      'use strict'
-
-      const forms = document.querySelectorAll('.needs-validation')
-
-      Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-
-          form.classList.add('was-validated')
-        }, false)
-      })
-    })()
-  </script>
-
+  <script src="js/login-form.js"></script>
 </body>
 </html>
