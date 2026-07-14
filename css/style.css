@@ -2,6 +2,10 @@
     color: #fc8383;
 }
 
+.hover-color:hover i {
+    color: #fc8383 !important;
+}
+
 .head-bg-color{
     background-color: #F5F0ED;
     
