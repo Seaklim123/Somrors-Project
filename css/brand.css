@@ -13,3 +13,17 @@
     }
 }
 
+.not-found-wrapper {
+    width: 100%;
+    grid-column: 1 / -1;
+}
+
+.not-found {
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+

@@ -2,52 +2,57 @@ import { setupWishlist } from "./wistlist.js";
 var products = [
     { 
         id: 1,
-        image: "images/best-seller/best1.jpg",
-        title: "product 1",
-        text: "This is a longer card with supporting text below as a natural lead-in to additional content.",
-        price: 10,
-        brand: "Laneige",
+        image: "images/category/foam/1.webp",
+        title: "Anua Cleasing Oil",
+        text: "Anua Heartleaf Pore Control Cleansing Oil and Deep Cleasing",
+        price: 23,
+        brand: "Anua",
         link: "product-detail.html"
     },
     { 
         id: 2,
-        image: "images/best-seller/best2.jpg",
-        title: "product 2",
-        text: "This is another longer card with supporting text below as a natural lead-in to additional content.",
-        price: 20,
-        brand: "Medicube"
+        image: "images/category/foam/6.webp",
+        title: "Joseon Green Plum Cleanser ",
+        text: "Beauty of Joseon Green Plum Refreshing Cleanser 100Ml",
+        price: 14,
+        brand: "Beauty of Joseon",
+        link: "product-detail.html"
     },
     { 
         id: 3,
-        image: "images/best-seller/best3.jpg",
-        title: "product 3",
-        text: "This is yet another longer card with supporting text below as a natural lead-in to additional content.",
+        image: "images/category/hair/4.webp",
+        title: "Fino",
+        text: "Shiseido Fino Premium Touch Hair Mask best for long hair",
         price: 30,
-        brand: "Beauty of Joseon"
+        brand: "Shiseido",
+        link: "product-detail.html"
     },
     { 
-        id: 1,
-        image: "images/best-seller/best1.jpg",
-        title: "product 1",
-        text: "This is a longer card with supporting text below as a natural lead-in to additional content.",
-        price: 10,
-        brand: "Anua"
+        id: 4,
+        image: "images/category/hair/11.webp",
+        title: "Kesar Shampoo",
+        text: "Kesar lamore Bamboo Charcoal Shampoo best for short hair",
+        price: 12,
+        brand: "Kesar Lamore",
+        link: "product-detail.html"
     },
     { 
-        id: 2,
-        image: "images/best-seller/best2.jpg",
-        title: "product 2",
-        text: "This is another longer card with supporting text below as a natural lead-in to additional content.",
-        price: 20,
-        brand: "SKIN1004"
+        id: 5,
+        image: "images/category/toners/11.png",
+        title: "Torriden Dive In Multi Pad",
+        text: "This is Torriden Dive In Multi Pad use for combination skin.",
+        price: 16,
+        brand: "Torriden",
+        link: "product-detail.html"
     },
     { 
-        id: 3,
-        image: "images/best-seller/best3.jpg",
-        title: "product 3",
-        text: "This is yet another longer card with supporting text below as a natural lead-in to additional content.",
-        price: 30,
-        brand: "Torriden"
+        id: 6,
+        image: "images/category/toners/8.png",
+        title: "mixsoon",
+        text: "This is Mixsoon Bean Toner Pad.",
+        price: 25,
+        brand: "Torriden",
+        link: "Mixsoon"
     }
 ];
 
