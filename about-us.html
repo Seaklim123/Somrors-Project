@@ -19,46 +19,58 @@
 <body class="d-flex flex-column min-vh-100 bg-page">
 
     <!-- Header -->
-    <nav class="navbar navbar-expand-lg head-bg-color fixed-top border-bottom">
-        <div class="container-fluid px-4">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="images/logo.png" alt="Logo" class="logo me-2" style="height: 70px;">
-                <span class="brand-text"></span>
-            </a>    
+    <div>
+        <nav class="navbar navbar-expand-lg head-bg-color fixed-top">
+            <div class="container-fluid">
+                <form action="/search" method="GET" class="d-flex align-items-center flex-grow-1 me-2" style="max-width: 450px;">
+                    <img src="images/logo-v.png" alt="Logo" class="logo me-2" style="max-height: 80px;">
+                    <div class="position-relative flex-grow-1">
+                        <input name="query" class="form-control pe-5 border-10 bg-light" type="search" placeholder="Search" aria-label="Search" />
+                        <button class="btn position-absolute top-50 end-0 translate-middle-y border-0 bg-transparent me-2 px-2" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>              
+                </form>
 
-            <form action="/search" method="GET" class="d-flex align-items-center flex-grow-1 max-w-search mx-4">
-                <div class="position-relative w-100">
-                    <input name="query" class="form-control pe-5 search-input" type="search" placeholder="Search"
-                        aria-label="Search" />
-                    <button class="btn position-absolute top-50 end-0 translate-middle-y border-0 bg-transparent me-2"
-                        type="submit">
-                        <i class="bi bi-search text-secondary"></i>
-                    </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="max-width: 280px;">
+                    
+                    <div class="offcanvas-header border-b d-lg-none">
+                        <h5 class="offcanvas-title text-muted" id="offcanvasNavbarLabel">Menu</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+
+                    <div class="offcanvas-body d-lg-flex align-items-lg-center justify-content-lg-end">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 text-start text-lg-center align-items-lg-center gap-lg-3">
+                            <li class="nav-item my-2 my-lg-0">
+                                <a class="nav-link hover-color py-lg-0 text-nowrap" href="index.html"><b>Home</b></a>
+                            </li>
+                            <li class="nav-item my-2 my-lg-0">
+                                <a class="nav-link hover-color py-lg-0 text-nowrap" href="all-products.html">Products</a>
+                            </li>
+                            <li class="nav-item my-2 my-lg-0">
+                                <a class="nav-link hover-color py-lg-0 text-nowrap" href="category.html">Category</a>
+                            </li>
+                            <li class="nav-item my-2 my-lg-0">
+                                <a class="nav-link hover-color py-lg-0 text-nowrap" href="brand.html">Brand</a>
+                            </li>
+                            <li class="nav-item my-2 my-lg-0">
+                                <a class="nav-link active hover-color py-lg-0 text-nowrap" aria-current="page" href="about-us.html">About us</a>
+                            </li>
+                            <li class="d-flex d-lg-inline-flex align-items-center justify-content-start justify-content-lg-center gap-4 mt-4 mt-lg-0 ms-lg-3 pt-3 pt-lg-0 border-top border-lg-0">
+                                <a class="nav-link hover-color icon-size p-0 py-lg-0" href="cart.html"><i class="bi bi-cart3"></i></a>
+                                <a class="nav-link hover-color icon-size p-0 py-lg-0" href="wishlist.html"><i class="bi bi-heart"></i></a>
+                                <a class="nav-link hover-color icon-size p-0 py-lg-0" href="account.html"><i class="bi bi-person-circle"></i></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </form>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                <ul class="navbar-nav align-items-center gap-2">
-                    <li class="nav-item"><a class="nav-link hover-color" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link hover-color" href="all-products.html">Products</a></li>
-                    <li class="nav-item"><a class="nav-link hover-color" href="#">Category</a></li>
-                    <li class="nav-item"><a class="nav-link hover-color" href="brand.html">Brand</a></li>
-                    <li class="nav-item"><a class="nav-link active-link" href="about-us.html"><b>About us</b></a></li>
-                    <li class="nav-item ms-lg-3"><a class="nav-link icon-link" href="#"><i
-                                class="bi bi-cart3 fs-5"></i></a></li>
-                    <li class="nav-item"><a class="nav-link icon-link" href="#"><i class="bi bi-heart fs-5"></i></a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link icon-link" href="#"><i
-                                class="bi bi-person-circle fs-5"></i></a></li>
-                </ul>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
 
         <!-- Main Content -->
 <main class="container main-content-padding flex-grow-1" style="margin-top: 100px;">
@@ -170,23 +182,38 @@
     </main> 
 
     <!-- footer -->
-    <div class="footer bg-footer-custom mt-auto py-5 w-100">
-        <div class="container">
-            <div class="d-flex justify-content-between"> 
-                <div class="d-flex flex-column gap-2">
+    <div class="footer mt-auto">
+      <div class="container">
+            <div class="d-flex justify-content-between flex-wrap">
+                <div class="d-flex flex-column">
                     <h2>Follow Us</h2>
-                    <div class="d-flex align-items-center"><i class="bi bi-facebook"></i><span class="ps-3">Somrors skin care</span></div>
-                    <div class="d-flex align-items-center"><i class="bi bi-telegram"></i><span class="ps-3">@Somrors_skin_care</span></div>
+                    <div>
+                        <i class="bi bi-facebook"></i>
+                        <span class="ps-3"> Somros skin care </span>
+                    </div>
+                    <div>
+                    <i class="bi bi-telegram"></i>
+                    <span class="ps-3"> @Somros_skin_care </span>
+                    </div>
                 </div>
                 <div class="d-flex flex-column gap-2">
                     <h2>Contact us</h2>
-                    <div class="d-flex align-items-center"><i class="bi bi-telephone"></i><span class="ps-3">097 777 877 / 096 686 666</span></div>
-                    <div class="d-flex align-items-center"><i class="bi bi-envelope"></i><span class="ps-3">Somrors@gmail.com</span></div>
-                    <div class="d-flex align-items-center"><i class="bi bi-map"></i><span class="ps-3">Somrors@gmail.com</span></div>
-                </div>
+                    <div>
+                        <i class="bi bi-telephone"></i>
+                        <span class="ps-3"> 097 777 877 / 096 686 666 </span>
+                    </div>
+                    <div>
+                        <i class="bi bi-envelope"></i>
+                        <span class="ps-3"> Somros@gmail.com </span>
+                    </div>
+                    <div>
+                        <i class="bi bi-geo-alt"></i>
+                        <span class="ps-3"> Phnom Penh, Cambodia </span>
+                    </div>
+                </div>        
             </div>
-            <div class="text-center mt-4 pt-3 border-top border-dark border-opacity-10">
-                <p class="mb-0">&copy; 2024 Somrors. All rights reserved.</p>
+            <div class="text-center mt-4">
+                <p>&copy; 2024 Somros. All rights reserved.</p>
             </div>
         </div>
     </div>
