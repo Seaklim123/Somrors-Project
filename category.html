@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brand</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/brand.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>category</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+ <link rel="stylesheet" href="css/style.css">
+ <link rel="stylesheet" href="css/home.css">
+ <link rel="stylesheet" href="css/category.css">
+ 
 </head>
 <body>
-
     <!-- header -->
     <div>
         <nav class="navbar navbar-expand-lg head-bg-color fixed-top">
@@ -44,16 +44,16 @@
                     <div class="offcanvas-body d-lg-flex align-items-lg-center justify-content-lg-end">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 text-start text-lg-center align-items-lg-center gap-lg-3">
                             <li class="nav-item my-2 my-lg-0">
-                                <a class="nav-link hover-color py-lg-0 text-nowrap" href="index.html">Home</a>
+                                <a class="nav-link hover-color py-lg-0 text-nowrap" aria-current="page" href="index.html">Home</a>
                             </li>
                             <li class="nav-item my-2 my-lg-0">
                                 <a class="nav-link hover-color py-lg-0 text-nowrap" href="products.html">Products</a>
                             </li>
                             <li class="nav-item my-2 my-lg-0">
-                                <a class="nav-link hover-color py-lg-0 text-nowrap" href="category.html">Category</a>
+                                <a class="nav-link hover-color py-lg-0 text-nowrap active" href="category.html"><b>Category</b></a>
                             </li>
                             <li class="nav-item my-2 my-lg-0">
-                                <a class="nav-link active hover-color py-lg-0 text-nowrap" aria-current="page" href="brand.html"><b>Brand</b></a>
+                                <a class="nav-link hover-color py-lg-0 text-nowrap" href="brand.html">Brand</a>
                             </li>
                             <li class="nav-item my-2 my-lg-0">
                                 <a class="nav-link hover-color py-lg-0 text-nowrap" href="about-us.html">About us</a>
@@ -70,28 +70,17 @@
         </nav>
     </div>
 
-    <!-- bordy -->
 
-    <div class="container mb-5">
-        <div class="my-5 text-center">
-            <h2>All Brands</h2>
-        </div>
-        
-        <div class="d-flex flex-wrap justify-content-center gap-2 mb-5 text-center">
-            <a class="btn button-primary button-color-active btn-filter" data-value="all" href="#" role="button" onclick="filterProducts(this)">All Brands</a> 
-            <a class="btn button-primary btn-filter" href="#" role="button" onclick="filterProducts(this)" data-value="laneige">Laneige</a> 
-            <a class="btn button-primary btn-filter" href="#" role="button" onclick="filterProducts(this)" data-value="medicube">Medicube</a> 
-            <a class="btn button-primary btn-filter" href="#" role="button" onclick="filterProducts(this)" data-value="beauty-of-joseon">Beauty of Joseon</a> 
-            <a class="btn button-primary btn-filter" href="#" role="button" onclick="filterProducts(this)" data-value="anua">Anua</a> 
-            <a class="btn button-primary btn-filter" href="#" role="button" onclick="filterProducts(this)" data-value="skin1004">SKIN1004</a> 
-            <a class="btn button-primary btn-filter" href="#" role="button" onclick="filterProducts(this)" data-value="torriden">Torriden</a> 
-        </div>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4" id="product-container">
+       <!-- Body -->
+    <div class="container text-center py-5 mt-5">
+        <h2 class="mb-5">CATEGORY</h2>
+    
+        <div class="row row-cols-2 row-cols-lg-6 row-cols-md-4 g-4 justify-content-center" id="category-container">
         </div>
     </div>
+  
 
-    
-    <!-- footer -->
+       <!-- footer -->
     <div class="footer mt-auto">
       <div class="container">
             <div class="d-flex justify-content-between flex-wrap">
@@ -128,6 +117,7 @@
         </div>
     </div>
 
-    <script type="module" src="js/brand.js"></script>
+    <script src="js/category.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,18 @@
+.sign-up-form{
+  margin-top: 120px;
+  margin-bottom: 35px;
+  box-shadow: rgba(234, 178, 165, 0.1) 0px 4px 12px;
+}
+
+.sign-up-form .card {
+  border-color: #EAB2A5 !important;
+}
+
+.sign-up-form .btn-login {
+  background-color: rgb(244, 194, 194);
+  color: white;
+}
+
+.sign-up-form .or-separator {
+  color: rgb(150, 146, 146);
+}
