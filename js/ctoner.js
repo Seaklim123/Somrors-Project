@@ -4,85 +4,145 @@ const products = [
     image: "images/category/toners/1.webp",
     title: "Abib",
     text: "Abib Glutathiosome Dark Spot Pad Vita Touch",
-    price: 14
+    price: 14,
+    brand: "Abib",
+    type: "Toner Pad",
+    specialty: "Glutathione and Vitamin C",
+    skinType: "All Skin Types",
+    targetProblem: "Dark Spots and Uneven Skin Tone"
   },
   {
     id: 2,
     image: "images/category/toners/2.webp",
     title: "Abib",
     text: "Abib Heartleaf Spot Pad Calming Touch 150Ml 80 Pads",
-    price: 17
+    price: 17,
+    brand: "Abib",
+    type: "Toner Pad",
+    specialty: "Heartleaf Extract and Panthenol",
+    skinType: "Sensitive and Acne-Prone Skin",
+    targetProblem: "Redness, Irritation, and Acne"
   },
   {
     id: 3,
     image: "images/category/toners/3.webp",
     title: "Anua Soothing Pad",
     text: "Anua Azelaic 10 + Hyaluron Redness Soothing Pad",
-    price: 17
+    price: 17,
+    brand: "Anua",
+    type: "Toner Pad",
+    specialty: "Azelaic Acid 10% and Hyaluronic Acid",
+    skinType: "Sensitive and Combination Skin",
+    targetProblem: "Redness, Acne Marks, and Dryness"
   },
   {
     id: 4,
     image: "images/category/toners/4.webp",
     title: "Cosrx",
-    text: "This is Cosrx Aha/Bha Clarifying Treatment Toner 150Ml",
-    price: 11
+    text: "This is Cosrx AHA/BHA Clarifying Treatment Toner 150Ml",
+    price: 11,
+    brand: "COSRX",
+    type: "Liquid Toner",
+    specialty: "AHA, BHA, and Mineral Water",
+    skinType: "Oily and Combination Skin",
+    targetProblem: "Clogged Pores, Blackheads, and Rough Skin"
   },
   {
     id: 5,
     image: "images/category/toners/5.webp",
     title: "Toner Hydro",
-    text: " This is Face Republic Hydro Balance Solution Toner",
-    price: 13
+    text: "This is Face Republic Hydro Balance Solution Toner",
+    price: 13,
+    brand: "Face Republic",
+    type: "Hydrating Toner",
+    specialty: "Hyaluronic Acid and Aloe Vera",
+    skinType: "Dry and Sensitive Skin",
+    targetProblem: "Dryness and Dehydration"
   },
   {
     id: 6,
     image: "images/category/toners/6.png",
-    title: "Medicube Vita C ",
+    title: "Medicube Vita C",
     text: "This is Medicube Deep Vita C Pad use for all skin type.",
-    price: 25
+    price: 25,
+    brand: "Medicube",
+    type: "Toner Pad",
+    specialty: "Vitamin C and Niacinamide",
+    skinType: "All Skin Types",
+    targetProblem: "Dark Spots, Dull Skin, and Hyperpigmentation"
   },
   {
     id: 7,
     image: "images/category/toners/7.webp",
     title: "Isntree",
-    text: " This is Isntree Hyaluronic Acid Toner 200Ml.",
-    price: 18
+    text: "This is Isntree Hyaluronic Acid Toner 200Ml.",
+    price: 18,
+    brand: "Isntree",
+    type: "Hydrating Toner",
+    specialty: "Five Types of Hyaluronic Acid",
+    skinType: "Dry and Sensitive Skin",
+    targetProblem: "Dryness and Weak Skin Barrier"
   },
   {
     id: 8,
     image: "images/category/toners/8.png",
-    title: "mixsoon",
+    title: "Mixsoon",
     text: "This is Mixsoon Bean Toner Pad.",
-    price: 25
+    price: 25,
+    brand: "Mixsoon",
+    type: "Toner Pad",
+    specialty: "Bean Ferment Extract",
+    skinType: "All Skin Types",
+    targetProblem: "Rough Texture and Lack of Moisture"
   },
   {
     id: 9,
     image: "images/category/toners/9.png",
-    title: "mixsoon",
+    title: "Mixsoon",
     text: "This is Mixsoon Galactomyces Toner Pad",
-    price: 18
+    price: 18,
+    brand: "Mixsoon",
+    type: "Toner Pad",
+    specialty: "Galactomyces Ferment Filtrate",
+    skinType: "Normal and Combination Skin",
+    targetProblem: "Dull Skin and Uneven Skin Tone"
   },
   {
     id: 10,
     image: "images/category/toners/10.webp",
     title: "Glow Boosting Toner",
-    text: "This is Numbuzin No.9+ NAD+ PDRN Glow Boosting Toner lead-in to additional content.",
-    price: 25
+    text: "This is Numbuzin No.9+ NAD+ PDRN Glow Boosting Toner.",
+    price: 25,
+    brand: "Numbuzin",
+    type: "Glow Toner",
+    specialty: "NAD+, PDRN, and Niacinamide",
+    skinType: "All Skin Types",
+    targetProblem: "Dullness, Fine Lines, and Uneven Skin Tone"
   },
   {
     id: 11,
     image: "images/category/toners/11.png",
     title: "Torriden Dive In Multi Pad",
     text: "This is Torriden Dive In Multi Pad use for combination skin.",
-    price: 16
+    price: 16,
+    brand: "Torriden",
+    type: "Toner Pad",
+    specialty: "Low Molecular Hyaluronic Acid",
+    skinType: "Combination Skin",
+    targetProblem: "Dryness and Skin Barrier Care"
   },
   {
     id: 12,
     image: "images/category/toners/12.webp",
     title: "NOLAHOUR Vegan Watery Toner",
-    text: "This is NOLAHOUR Vegan Watery Toner best for all skin type",
-    price: 15
-  },
+    text: "This is NOLAHOUR Vegan Watery Toner best for all skin type.",
+    price: 15,
+    brand: "NOLAHOUR",
+    type: "Watery Toner",
+    specialty: "Vegan Botanical Extracts and Hyaluronic Acid",
+    skinType: "All Skin Types",
+    targetProblem: "Dryness, Sensitive Skin, and Skin Hydration"
+  }
 ];
 
 const productContainer = document.getElementById("ctoner-container");
@@ -95,10 +155,15 @@ products.forEach(product => {
     
     productCol.innerHTML = `
         <div class="card card-hight" id="product-${product.id}">
-            <img src="${product.image}" class="card-img-top card-image" alt="${product.title}">
+        <a href="product-detail.html"
+        onclick='saveProduct(${JSON.stringify(product)})'>
+         <img src="${product.image}" class="card-img-top card-image">
+     </a>
             <div class="card-body">
-                <a class="nav-link active hover-color" aria-current="page" href="#">
-                    <h5 class="card-title">${product.title}</h5>
+              <a href="product-detail.html"
+                 class="nav-link hover-color"
+                 onclick='saveProduct(${JSON.stringify(product)})'>
+                 <h5 class="card-title">${product.title}</h5>
                 </a>
                 <a class="nav-link hover-color" href="#">
                     <p class="card-text text-clamp">${product.text}</p>
@@ -118,6 +183,10 @@ products.forEach(product => {
     
     productContainer.appendChild(productCol);
 });
+
+function saveProduct(product) {
+  localStorage.setItem("selectedProduct", JSON.stringify(product));
+}
 
 // Show all products
 displayProducts(products);

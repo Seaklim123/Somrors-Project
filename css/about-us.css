@@ -1,0 +1,85 @@
+.belief-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0; 
+    border-radius: 8px;       
+    padding: 24px;            
+    text-align: left;          
+}
+
+.belief-card .bi {
+    font-size: 1.25rem;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.belief-card h5 {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.belief-card p {
+    color: #6c757d;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.serif-title {
+    font-family: 'Playfair Display', 'Didot', 'Georgia', serif; /* Gives it that high-end beauty brand look */
+    color: #2b2b2b;
+    font-weight: 400;
+}
+
+.small-title {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: #8c8c8c;
+    font-weight: 600;
+}
+
+.lead-text {
+    font-size: 1.05rem;
+    color: #555555;
+    line-height: 1.7;
+}
+
+.body-text {
+    font-size: 0.95rem;
+    color: #555555;
+    line-height: 1.6;
+}
+
+
+.hero-image-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px; 
+    object-fit: cover;
+}
+
+
+.quote-card {
+    background-color: #f3cfcc; 
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.quote-icon {
+    font-size: 2.5rem;
+    color: #2b2b2b;
+    line-height: 1;
+}
+
+.quote-text {
+    font-family: 'Playfair Display', 'Didot', 'Georgia', serif;
+    font-size: 1.35rem;
+    color: #2b2b2b;
+    line-height: 1.5;
+}

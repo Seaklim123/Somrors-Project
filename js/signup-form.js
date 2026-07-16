@@ -1,25 +1,34 @@
-const pw = document.getElementById('password')
-const confirmPw = document.getElementById('confirmPassword')
+const signupForm = document.getElementById("signupForm");
 
-function validatePasswordMatch() {
-  confirmPw.setCustomValidity(pw.value !== confirmPw.value ? "Passwords don't match." : "")
-}
+signupForm.addEventListener("submit", function (e) {
 
-pw.addEventListener('input', validatePasswordMatch)
-confirmPw.addEventListener('input', validatePasswordMatch)
+    e.preventDefault();
 
+    const username = document.getElementById("username").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const confirmPassword = document.getElementById("confirmPassword").value.trim();
 
-(() => {
-      'use strict'
-      const forms = document.querySelectorAll('.needs-validation')
-      Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
-          validatePasswordMatch() // re-check right before validity is evaluated
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-          form.classList.add('was-validated')
-        }, false)
-      })
-    })()
+    if (username === "" || email === "" || phone === "" || password === "" || confirmPassword === "") {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        alert("Passwords don't match.");
+        return;
+    }
+
+    const user = {
+        name: username,
+        email: email,
+        phone: phone
+    };
+
+    localStorage.setItem("user", JSON.stringify(user));
+
+    alert("Account created!");
+
+    window.location.href = "index.html";
+});
