@@ -1,16 +1,26 @@
-(() => {
-      'use strict'
+const loginForm = document.getElementById("loginForm");
 
-      const forms = document.querySelectorAll('.needs-validation')
+loginForm.addEventListener("submit", function (e) {
 
-      Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
+    e.preventDefault();
 
-          form.classList.add('was-validated')
-        }, false)
-      })
-})()
+    const username = document.getElementById("username").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    if (username === "" || email === "" || password === "") {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    const user = {
+        name: username,
+        email: email
+    };
+
+    localStorage.setItem("user", JSON.stringify(user));
+
+    alert("Login successful!");
+
+    window.location.href = "index.html";
+});
