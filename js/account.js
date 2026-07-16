@@ -167,9 +167,10 @@ if (updatePasswordBtn && currentPasswordInput && newPasswordInput && confirmPass
    Shows a dropdown in the navbar: "My Account"/"Logout" when someone is
    logged in (reading the "user" object saved by login-form/signup-form),
    or "Login"/"Register" when no one is. Also fills in any .userName /
-   .userEmail elements on the page with the logged-in user's info — these
-   share the same elements as the Personal Information card above, so
-   logging in overwrites any manually-saved edits with the real account. */
+   .userEmail / .userPhone elements on the page with the logged-in user's
+   info — these share the same elements as the Personal Information card
+   above, so logging in overwrites any manually-saved edits with the
+   real account. */
 
 const accountMenu = document.getElementById("accountMenu");
 const user = JSON.parse(localStorage.getItem("user"));
@@ -182,6 +183,11 @@ if (user) {
     document.querySelectorAll(".userEmail").forEach(element => {
         element.textContent = user.email;
     });
+    if (user.phone) {
+        document.querySelectorAll(".userPhone").forEach(element => {
+            element.textContent = user.phone;
+        });
+    }
 
     if (accountMenu) {
         accountMenu.innerHTML = `
