@@ -1,63 +1,84 @@
 import { setupWishlist } from "./wistlist.js";
 var products = [
-    { 
+    {
         id: 1,
-        image: "images/category/foam/1.webp",
-        title: "Anua Cleasing Oil",
-        text: "Anua Heartleaf Pore Control Cleansing Oil and Deep Cleasing",
-        price: 23,
-        brand: "Anua",
-        link: "product-detail.html"
-    },
-    { 
-        id: 2,
-        image: "images/category/foam/6.webp",
-        title: "Joseon Green Plum Cleanser ",
-        text: "Beauty of Joseon Green Plum Refreshing Cleanser 100Ml",
-        price: 14,
-        brand: "Beauty of Joseon",
-        link: "product-detail.html"
-    },
-    { 
-        id: 3,
-        image: "images/category/hair/4.webp",
-        title: "Fino",
-        text: "Shiseido Fino Premium Touch Hair Mask best for long hair",
-        price: 30,
-        brand: "Shiseido",
-        link: "product-detail.html"
-    },
-    { 
-        id: 4,
-        image: "images/category/hair/11.webp",
-        title: "Kesar Shampoo",
-        text: "Kesar lamore Bamboo Charcoal Shampoo best for short hair",
-        price: 12,
-        brand: "Kesar Lamore",
-        link: "product-detail.html"
-    },
-    { 
-        id: 5,
-        image: "images/category/toners/11.png",
-        title: "Torriden Dive In Multi Pad",
-        text: "This is Torriden Dive In Multi Pad use for combination skin.",
-        price: 16,
-        brand: "Torriden",
-        link: "product-detail.html"
-    },
-    { 
-        id: 6,
         image: "images/category/toners/8.png",
-        title: "mixsoon",
+        title: "Mixsoon",
         text: "This is Mixsoon Bean Toner Pad.",
         price: 25,
-        brand: "Torriden",
-        link: "Mixsoon"
+        brand: "Mixsoon",
+        type: "Toner Pad",
+        specialty: "Bean Ferment Extract",
+        skinType: "All Skin Types",
+        targetProblem: "Rough Texture and Lack of Moisture"
+    },
+    {
+        id: 2,
+        image: "images/category/toners/3.webp",
+        title: "Anua Soothing Pad",
+        text: "Anua Azelaic 10 + Hyaluron Redness Soothing Pad",
+        price: 17,
+        brand: "Anua",
+        type: "Toner Pad",
+        specialty: "Azelaic Acid 10% and Hyaluronic Acid",
+        skinType: "Sensitive and Combination Skin",
+        targetProblem: "Redness, Acne Marks, and Dryness"
+    },
+    {
+        id: 3,
+        image: "images/all-products/sunscreens/17.webp",
+        title: "SKIN1004",
+        text: "Hyalu-Cica Water-Fit Sun Serum SPF50+",
+        price: 18,
+        brand: "SKIN1004",
+        type: "Sunscreen",
+        specialty: "Hyaluronic Acid",
+        skinType: "Dry Skin",
+        targetProblem: "UV Protection"
+    },
+    {
+        id: 4,
+        image: "images/all-products/masks/3.jpg",
+        title: "Laneige",
+        text: "Laneige Water Sleeping Mask",
+        price: 32,
+        brand: "Laneige",
+        type: "Sleeping Mask",
+        specialty: "Squalane",
+        skinType: "All Skin Types",
+        targetProblem: "Dull Skin"
+    },
+    {
+        id: 5,
+        image: "images/all-products/cleansers/7.webp",
+        title: "Medicube",
+        text: "Medicube Red Foam Cleanser",
+        price: 18,
+        brand: "Medicube",
+        type: "Foam Cleanser",
+        specialty: "Salicylic Acid",
+        skinType: "Acne-Prone Skin",
+        targetProblem: "Acne"
+    },
+    {
+        id: 6,
+        image: "images/all-products/serums/5.jpg",
+        title: "Medicube",
+        text: "Medicube Collagen Glow Booster Serum",
+        price: 28,
+        brand: "Medicube",
+        type: "Serum",
+        specialty: "Collagen",
+        skinType: "Dry Skin",
+        targetProblem: "Loss of Elasticity"
     }
 ];
 
 const productContainer = document.getElementById('product-container');
 const filterButtons = document.querySelectorAll('.btn-filter');
+window.saveProduct = function (product) {
+    localStorage.setItem("selectedProduct", JSON.stringify(product));
+};
 
 function renderProducts(productsToDisplay) {
     productContainer.innerHTML = '';
@@ -88,10 +109,10 @@ productsToDisplay.forEach(product => {
             <!-- Flex column layout distributes title space and footer alignment -->
             <div class="card-body d-flex flex-column p-3">
                 <div class="flex-grow-1 mb-3">
-                    <a class="text-decoration-none text-dark hover-color d-block mb-1" href="${product.link || '#'}">
+                    <a class="text-decoration-none text-dark hover-color d-block mb-1" href="product-detail.html" onclick='saveProduct(${JSON.stringify(product)})'>
                         <h5 class="card-title fs-6 fw-bold m-0 hover-color">${product.title}</h5>
                     </a>
-                    <a class="text-decoration-none text-muted d-block" href="${product.link || '#'}">
+                    <a class="text-decoration-none text-muted d-block" href="product-detail.html" onclick='saveProduct(${JSON.stringify(product)})'>
                         <!-- Connected to your text-clamp CSS width rule -->
                         <p class="card-text small text-clamp m-0 hover-color">
                             ${product.text}
@@ -145,5 +166,8 @@ filterButtons.forEach(button => {
     };
 });
 
+function saveProduct(product) {
+  localStorage.setItem("selectedProduct", JSON.stringify(product));
+}
 renderProducts(products);
 setupWishlist();
