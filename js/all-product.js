@@ -184,9 +184,14 @@ allProductCol.innerHTML = `
                 
                 <!-- Quick Actions Icons -->
                 <div class="d-flex gap-3 fs-5">
-                    <a class="text-secondary hover-color transition-all" href="#" aria-label="Add to Cart">
+                    <a class="text-dark hover-color p-0 add-cart" 
+                        href="#"
+                        data-id="${product.id}"
+                        data-title="${product.title}"
+                        data-price="${product.price}"
+                        data-image="${product.image}">
                         <i class="bi bi-cart3"></i>
-                    </a>
+                  </a>
                     <button class="border-0 bg-transparent text-secondary hover-color transition-all" aria-label="Add to Wishlist">
                         <i class="bi bi-heart heart"></i>
                     </button>

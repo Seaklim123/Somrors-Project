@@ -289,16 +289,22 @@ productsToDisplay.forEach(product => {
                     </a>
                 </div>
                 
-                <!-- Action bottom footer row alignment split -->
                 <div class="d-flex justify-content-between align-items-center pt-2 border-top">
                     <!-- Price section display block -->
                     <div class="fs-5 fw-bold text-danger icon-size m-0 d-flex align-items-center">
                         <p class="m-0"><i class="bi bi-currency-dollar text-danger"></i>${product.price}</p>
                     </div>
                     
-                    <!-- Action utility shopping icons wrapper -->
+                    
                     <div class="d-flex gap-3 fs-5 icon-size">
-                        <a class="text-dark hover-color p-0" href="#" aria-label="Add to Cart"><i class="bi bi-cart3"></i></a>
+                        <a class="text-dark hover-color p-0 add-cart" 
+                            href="#"
+                            data-id="${product.id}"
+                            data-title="${product.title}"
+                            data-price="${product.price}"
+                            data-image="${product.image}">
+                            <i class="bi bi-cart3"></i>
+                        </a>
                         <a class="text-dark hover-color p-0" aria-label="Add to Wishlist"><i class="bi bi-heart heart"></i></a>
                     </div>
                 </div>
