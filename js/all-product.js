@@ -3,20 +3,20 @@ var products =[
       {
             id: 1,
             image: "images/all-products/cleansers/anua-oil.webp",
-            title: "Anua",
-            text: "Anua Heartleaf Pore Control Cleansing Oil",
+            title: "Heartleaf Pore Control Cleansing Oil",
+            text: "A gentle cleansing oil that removes makeup, sunscreen with heartleaf extract.",
             price: 18,
             brand: "Anua",
             type: "Cleansing Oil",
             specialty: "Heartleaf Extract",
             skinType: "Acne-Prone Skin",
-            targetProble: "Blackheads and Clogged Pores"
+            targetProblem: "Blackheads and Clogged Pores"
       },
       {
             id: 2,
             image: "images/all-products/lip-care/1.webp",
-            title: "Laneige",
-            text: "Laneige Lip Sleeping Mask Berry",
+            title: "Lip Sleeping Mask Berry",
+            text: "Overnight lip mask that deeply hydrates and softens dry lips.",
             price: 24,
             brand: "Laneige",
             type: "Lip Mask",
@@ -27,8 +27,8 @@ var products =[
       {
             id: 3,
             image: "images/all-products/toners/2.webp",
-            title: "Laneige",
-            text: "Laneige Cream Skin Cerapeptide Refiner",
+            title: "Cream Skin Cerapeptide Refiner",
+            text: "A moisturizing toner that strengthens the skin barrier and improves hydration.",
             price: 30,
             brand: "Laneige",
             type: "Toner",
@@ -39,8 +39,8 @@ var products =[
       {
             id: 4,
             image: "images/all-products/masks/3.jpg",
-            title: "Laneige",
-            text: "Laneige Water Sleeping Mask",
+            title: "Water Sleeping Mask",
+            text: "A sleeping mask that provides overnight hydration for fresh and glowing skin.",
             price: 32,
             brand: "Laneige",
             type: "Sleeping Mask",
@@ -48,12 +48,11 @@ var products =[
             skinType: "All Skin Types",
             targetProblem: "Dull Skin"
       },
-
       {
             id: 5,
             image: "images/all-products/toners/4.webp",
-            title: "Medicube",
-            text: "Medicube Zero Pore Pad 2.0",
+            title: "Zero Pore Pad 2.0",
+            text: "Exfoliating toner pads that help control oil and minimize visible pores.",
             price: 25,
             brand: "Medicube",
             type: "Toner Pad",
@@ -64,8 +63,8 @@ var products =[
       {
             id: 6,
             image: "images/all-products/serums/5.jpg",
-            title: "Medicube",
-            text: "Medicube Collagen Glow Booster Serum",
+            title: "Collagen Glow Booster Serum",
+            text: "A glow-enhancing serum that helps improve skin firmness and elasticity.",
             price: 28,
             brand: "Medicube",
             type: "Serum",
@@ -76,8 +75,8 @@ var products =[
       {
             id: 7,
             image: "images/all-products/moisturizers/6.jpg",
-            title: "Medicube",
-            text: "Medicube Deep Vitamin C Capsule Cream",
+            title: "Deep Vitamin C Capsule Cream",
+            text: "Vitamin C moisturizer that brightens skin and reduces dullness.",
             price: 29,
             brand: "Medicube",
             type: "Moisturizer",
@@ -88,8 +87,8 @@ var products =[
       {
             id: 8,
             image: "images/all-products/cleansers/7.webp",
-            title: "Medicube",
-            text: "Medicube Red Foam Cleanser",
+            title: "Red Foam Cleanser",
+            text: "Gentle foam cleanser that removes impurities and helps reduce acne.",
             price: 18,
             brand: "Medicube",
             type: "Foam Cleanser",
@@ -100,8 +99,8 @@ var products =[
       {
             id: 9,
             image: "images/all-products/sunscreens/8.jpg",
-            title: "Beauty of Joseon",
-            text: "Relief Sun Rice + Probiotics SPF50+",
+            title: "Relief Sun Rice + Probiotics SPF50+",
+            text: "Lightweight sunscreen that protects skin from UV rays and dryness.",
             price: 18,
             brand: "Beauty of Joseon",
             type: "Sunscreen",
@@ -112,8 +111,8 @@ var products =[
       {
             id: 10,
             image: "images/all-products/serums/9.jpg",
-            title: "Beauty of Joseon",
-            text: "Glow Serum Propolis + Niacinamide",
+            title: "Glow Serum Propolis + Niacinamide",
+            text: "Nourishing serum that brightens skin and improves skin texture.",
             price: 17,
             brand: "Beauty of Joseon",
             type: "Serum",
@@ -124,8 +123,8 @@ var products =[
       {
             id: 11,
             image: "images/all-products/serums/10.jpg",
-            title: "Beauty of Joseon",
-            text: "Glow Deep Serum Rice + Alpha-Arbutin",
+            title: "Glow Deep Serum Rice + Alpha-Arbutin",
+            text: "Brightening serum that helps reduce dark spots and uneven tone.",
             price: 17,
             brand: "Beauty of Joseon",
             type: "Serum",
@@ -136,110 +135,14 @@ var products =[
       {
             id: 12,
             image: "images/all-products/essences/11.webp",
-            title: "Beauty of Joseon",
-            text: "Ginseng Essence Water",
+            title: "Ginseng Essence Water",
+            text: "Hydrating essence that nourishes skin and restores natural glow.",
             price: 19,
             brand: "Beauty of Joseon",
             type: "Essence",
             specialty: "Ginseng",
             skinType: "Normal Skin",
             targetProblem: "Dull Skin"
-      },
-      {
-            id: 13,
-            image: "images/all-products/cleansers/12.webp",
-            title: "Anua",
-            text: "Heartleaf Pore Control Cleansing Oil",
-            price: 18,
-            brand: "Anua",
-            type: "Cleansing Oil",
-            specialty: "Heartleaf",
-            skinType: "Acne-Prone Skin",
-            targetProblem: "Blackheads"
-      },
-      {
-            id: 14,
-            image: "images/all-products/toners/13.webp",
-            title: "Anua",
-            text: "Heartleaf 77% Soothing Toner",
-            price: 22,
-            brand: "Anua",
-            type: "Toner",
-            specialty: "Heartleaf",
-            skinType: "Sensitive Skin",
-            targetProblem: "Redness"
-      },
-      {
-            id: 15,
-            image: "images/all-products/serums/14.webp",
-            title: "Anua",
-            text: "Niacinamide 10% + TXA 4% Serum",
-            price: 24,
-            brand: "Anua",
-            type: "Serum",
-            specialty: "Niacinamide",
-            skinType: "Combination Skin",
-            targetProblem: "Dark Spots"
-      },
-      {
-            id: 16,
-            image: "images/all-products/moisturizers/15.webp",
-            title: "Anua",
-            text: "Heartleaf 70% Intense Calming Cream",
-            price: 25,
-            brand: "Anua",
-            type: "Moisturizer",
-            specialty: "Heartleaf",
-            skinType: "Sensitive Skin",
-            targetProblem: "Irritation"
-      },
-      {
-            id: 17,
-            image: "images/all-products/ampoules/16.webp",
-            title: "SKIN1004",
-            text: "Madagascar Centella Ampoule",
-            price: 20,
-            brand: "SKIN1004",
-            type: "Ampoule",
-            specialty: "Centella Asiatica",
-            skinType: "Sensitive Skin",
-            targetProblem: "Irritation"
-      },
-      {
-            id: 18,
-            image: "images/all-products/sunscreens/17.webp",
-            title: "SKIN1004",
-            text: "Hyalu-Cica Water-Fit Sun Serum SPF50+",
-            price: 18,
-            brand: "SKIN1004",
-            type: "Sunscreen",
-            specialty: "Hyaluronic Acid",
-            skinType: "Dry Skin",
-            targetProblem: "UV Protection"
-      },
-      {
-            id: 19,
-            image: "images/all-products/cleansers/18.jpg",
-            title: "SKIN1004",
-            text: "Madagascar Centella Light Cleansing Oil",
-            price: 19,
-            brand: "SKIN1004",
-            type: "Cleansing Oil",
-            specialty: "Centella Asiatica",
-            skinType: "Sensitive Skin",
-            targetProblem: "Makeup Removal"
-      },
-      {
-            id: 20,
-            image: "images/all-products/moisturizers/19.webp",
-            title: "SKIN1004",
-            text: "Probio-Cica Enrich Cream",
-            price: 24,
-            brand: "SKIN1004",
-            type: "Moisturizer",
-            specialty: "Centella & Ceramide",
-            skinType: "Dry Skin",
-            targetProblem: "Skin Barrier Repair"
       }
 ];
 
@@ -262,10 +165,10 @@ allProductCol.innerHTML = `
         <div class="card-body d-flex flex-column p-3">
             <!-- Content Block (Title + Text) fills the remaining top space -->
             <div class="flex-grow-1 mb-3">
-                <a class="text-decoration-none text-dark hover-color d-block mb-1" href="#">
+                <a class="text-decoration-none text-dark hover-color d-block mb-1" href="product-detail.html" onclick='saveProduct(${JSON.stringify(product)})'>
                     <h5 class="card-title fs-6 fw-bold m-0 hover-color">${product.title}</h5>
                 </a>
-                <a class="text-decoration-none text-muted d-block" href="#">
+                <a class="text-decoration-none text-muted d-block" href="product-detail.html" onclick='saveProduct(${JSON.stringify(product)})'>
                     <p class="card-text hover-color small text-clamp-safe m-0" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
                         ${product.text}
                     </p>
