@@ -1,13 +1,4 @@
-// Handles the "My Account" page: showing/hiding the edit form, saving
-// changes back into the Personal Information card (and profile card) in
-// real time, and validating the Change Password form. Info is saved to
-// localStorage so it survives a page refresh (there's no backend yet).
-//
-// This file is also loaded on other pages (login, signup...) for the
-// navbar login/logout dropdown at the bottom, so every account-page-only
-// piece below is guarded with an existence check first.
-
-const STORAGE_KEY = 'somros_account_info';
+const STORAGE_KEY = "user";
 
 const editBtn = document.getElementById('editBtn');
 const editFormCard = document.getElementById('editFormCard');
@@ -15,37 +6,37 @@ const saveBtn = document.getElementById('saveBtn');
 const cancelBtn = document.getElementById('cancelBtn');
 const saveFeedback = document.getElementById('save-feedback');
 
-const displayUsername = document.getElementById('display-username');
-const displayPhone = document.getElementById('display-phone');
-const displayEmail = document.getElementById('display-email');
-const profileUsername = document.getElementById('profile-username');
-const profileEmail = document.getElementById('profile-email');
+const displayUsername = document.querySelector('.display-username');
+const displayPhone = document.querySelector('.display-phone');
+const displayEmail = document.querySelector('.display-email');
+const profileUsername = document.querySelector('.profile-username');
+const profileEmail = document.querySelector('.profile-email');
 
 const inputUsername = document.getElementById('input-username');
 const inputPhone = document.getElementById('input-phone');
 const inputEmail = document.getElementById('input-email');
 
-function applyInfo(info) {
-    if (info.username) {
-        if (displayUsername) displayUsername.textContent = info.username;
-        if (profileUsername) profileUsername.textContent = info.username;
-        if (inputUsername) inputUsername.value = info.username;
-    }
-    if (info.phone) {
-        if (displayPhone) displayPhone.textContent = info.phone;
-        if (inputPhone) inputPhone.value = info.phone;
-    }
-    if (info.email) {
-        if (displayEmail) displayEmail.textContent = info.email;
-        if (profileEmail) profileEmail.textContent = info.email;
-        if (inputEmail) inputEmail.value = info.email;
-    }
+function applyInfo(user) {
+    if (!user) return;
+
+    if (displayUsername) displayUsername.textContent = user.name || "";
+    if (profileUsername) profileUsername.textContent = user.name || "";
+    if (inputUsername) inputUsername.value = user.name || "";
+
+    if (displayPhone) displayPhone.textContent = user.phone || "";
+    if (inputPhone) inputPhone.value = user.phone || "";
+
+    if (displayEmail) displayEmail.textContent = user.email || "";
+    if (profileEmail) profileEmail.textContent = user.email || "";
+    if (inputEmail) inputEmail.value = user.email || "";
 }
 
 function loadSavedInfo() {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (!saved) return;
-    applyInfo(JSON.parse(saved));
+    const user = JSON.parse(localStorage.getItem(STORAGE_KEY));
+
+    if (user) {
+        applyInfo(user);
+    }
 }
 
 function showEditForm() {
@@ -63,8 +54,6 @@ function resetInputsToDisplay() {
     inputPhone.value = displayPhone.textContent.trim();
     inputEmail.value = displayEmail.textContent.trim();
 }
-
-// everything in this block only applies to account.html, which has all of these elements
 if (editBtn && editFormCard && saveBtn && cancelBtn) {
 
     editBtn.addEventListener('click', (e) => {
@@ -78,37 +67,44 @@ if (editBtn && editFormCard && saveBtn && cancelBtn) {
         hideEditForm();
     });
 
-    saveBtn.addEventListener('click', () => {
-        const username = inputUsername.value.trim();
-        const phone = inputPhone.value.trim();
-        const email = inputEmail.value.trim();
+    saveBtn.addEventListener("click", () => {
+    const username = inputUsername.value.trim();
+    const phone = inputPhone.value.trim();
+    const email = inputEmail.value.trim();
 
-        saveFeedback.classList.remove('text-success', 'text-danger');
+        saveFeedback.classList.remove("text-success", "text-danger");
 
         if (!username || !phone || !email) {
-            saveFeedback.textContent = 'Please fill in every field.';
-            saveFeedback.classList.add('text-danger');
+            saveFeedback.textContent = "Please fill in every field.";
+            saveFeedback.classList.add("text-danger");
             return;
         }
 
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
         if (!emailPattern.test(email)) {
-            saveFeedback.textContent = 'Please enter a valid email address.';
-            saveFeedback.classList.add('text-danger');
+            saveFeedback.textContent = "Please enter a valid email address.";
+            saveFeedback.classList.add("text-danger");
             return;
         }
 
-        const info = { username, phone, email };
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(info));
-        applyInfo(info);
+        let user = JSON.parse(localStorage.getItem("user")) || {};
 
-        saveFeedback.textContent = 'Saved!';
-        saveFeedback.classList.add('text-success');
+        user.name = username;
+        user.phone = phone;
+        user.email = email;
+
+        localStorage.setItem("user", JSON.stringify(user));
+
+        applyInfo(user);
+
+        saveFeedback.textContent = "Saved!";
+        saveFeedback.classList.add("text-success");
 
         hideEditForm();
 
         setTimeout(() => {
-            saveFeedback.textContent = '';
+            saveFeedback.textContent = "";
         }, 2500);
     });
 
@@ -149,7 +145,6 @@ if (updatePasswordBtn && currentPasswordInput && newPasswordInput && confirmPass
             return;
         }
 
-        // There's no backend yet, so this just simulates success on the front end.
         passwordFeedback.textContent = 'Password updated!';
         passwordFeedback.classList.add('text-success');
 
@@ -163,38 +158,21 @@ if (updatePasswordBtn && currentPasswordInput && newPasswordInput && confirmPass
     });
 }
 
-/* ---------------- Nav login/logout state ----------------
-   Shows a dropdown in the navbar: "My Account"/"Logout" when someone is
-   logged in (reading the "user" object saved by login-form/signup-form),
-   or "Login"/"Register" when no one is. Also fills in any .userName /
-   .userEmail / .userPhone elements on the page with the logged-in user's
-   info — these share the same elements as the Personal Information card
-   above, so logging in overwrites any manually-saved edits with the
-   real account. */
-
 const accountMenu = document.getElementById("accountMenu");
 const user = JSON.parse(localStorage.getItem("user"));
 
 if (user) {
 
-    document.querySelectorAll(".userName").forEach(element => {
-        element.textContent = user.name;
-    });
-    document.querySelectorAll(".userEmail").forEach(element => {
-        element.textContent = user.email;
-    });
-    if (user.phone) {
-        document.querySelectorAll(".userPhone").forEach(element => {
-            element.textContent = user.phone;
-        });
-    }
+    // Show user information
+    applyInfo(user);
 
+    // Account dropdown
     if (accountMenu) {
         accountMenu.innerHTML = `
             <div class="dropdown">
-                <a class="nav-link hover-color icon-size p-0" 
-                   href="#" 
-                   role="button" 
+                <a class="nav-link hover-color icon-size p-0"
+                   href="#"
+                   role="button"
                    data-bs-toggle="dropdown">
                     <i class="bi bi-person-circle"></i>
                 </a>
@@ -218,37 +196,42 @@ if (user) {
         `;
     }
 
-} else if (accountMenu) {
+} else {
 
-    accountMenu.innerHTML = `
-        <div class="dropdown">
-            <a class="nav-link hover-color icon-size p-0" 
-               href="#" 
-               role="button" 
-               data-bs-toggle="dropdown">
-                <i class="bi bi-person-circle"></i>
-            </a>
+    // User not logged in
+    if (accountMenu) {
+        accountMenu.innerHTML = `
+            <div class="dropdown">
+                <a class="nav-link hover-color icon-size p-0"
+                   href="#"
+                   role="button"
+                   data-bs-toggle="dropdown">
+                    <i class="bi bi-person-circle"></i>
+                </a>
 
-            <ul class="dropdown-menu dropdown-menu-end">
-                <li>
-                    <a class="dropdown-item" href="login-form.html">
-                        <i class="bi bi-box-arrow-in-right me-2"></i>
-                        Login
-                    </a>
-                </li>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                        <a class="dropdown-item" href="login-form.html">
+                            <i class="bi bi-box-arrow-in-right me-2"></i>
+                            Login
+                        </a>
+                    </li>
 
-                <li>
-                    <a class="dropdown-item" href="signup-form.html">
-                        <i class="bi bi-person-plus me-2"></i>
-                        Register
-                    </a>
-                </li>
-            </ul>
-        </div>
-    `;
+                    <li>
+                        <a class="dropdown-item" href="signup-form.html">
+                            <i class="bi bi-person-plus me-2"></i>
+                            Register
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        `;
+    }
 }
 
 function logout() {
     localStorage.removeItem("user");
     window.location.href = "index.html";
 }
+
+window.logout = logout;
