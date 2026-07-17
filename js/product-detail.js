@@ -12,7 +12,11 @@ if (product) {
 
     document.getElementById("targetProblem").textContent = product.targetProblem || "";
 
-    document.getElementById("brand").textContent = "by " + (product.title || "");
+    document.getElementById("price").textContent = (product.price || 0);
+
+    document.getElementById("title").textContent = (product.title || "") + " - " + (product.text || "");
+
+    document.getElementById("brand").textContent = "by " + (product.brand || "");
 
     document.getElementById("type").textContent = product.type || "";
 

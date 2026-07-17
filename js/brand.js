@@ -1,63 +1,253 @@
 import { setupWishlist } from "./wistlist.js";
 var products = [
-    { 
+    {
         id: 1,
-        image: "images/category/foam/1.webp",
-        title: "Anua Cleasing Oil",
-        text: "Anua Heartleaf Pore Control Cleansing Oil and Deep Cleasing",
-        price: 23,
-        brand: "Anua",
-        link: "product-detail.html"
-    },
-    { 
-        id: 2,
-        image: "images/category/foam/6.webp",
-        title: "Joseon Green Plum Cleanser ",
-        text: "Beauty of Joseon Green Plum Refreshing Cleanser 100Ml",
-        price: 14,
-        brand: "Beauty of Joseon",
-        link: "product-detail.html"
-    },
-    { 
-        id: 3,
-        image: "images/category/hair/4.webp",
-        title: "Fino",
-        text: "Shiseido Fino Premium Touch Hair Mask best for long hair",
-        price: 30,
-        brand: "Shiseido",
-        link: "product-detail.html"
-    },
-    { 
-        id: 4,
-        image: "images/category/hair/11.webp",
-        title: "Kesar Shampoo",
-        text: "Kesar lamore Bamboo Charcoal Shampoo best for short hair",
-        price: 12,
-        brand: "Kesar Lamore",
-        link: "product-detail.html"
-    },
-    { 
-        id: 5,
-        image: "images/category/toners/11.png",
-        title: "Torriden Dive In Multi Pad",
-        text: "This is Torriden Dive In Multi Pad use for combination skin.",
-        price: 16,
-        brand: "Torriden",
-        link: "product-detail.html"
-    },
-    { 
-        id: 6,
         image: "images/category/toners/8.png",
-        title: "mixsoon",
-        text: "This is Mixsoon Bean Toner Pad.",
+        title: "Bean Toner Pad",
+        text: "A gentle toner pad that hydrates skin and improves rough texture.",
         price: 25,
+        brand: "Mixsoon",
+        type: "Toner Pad",
+        specialty: "Bean Ferment Extract",
+        skinType: "All Skin Types",
+        targetProblem: "Rough Texture and Lack of Moisture"
+    },
+    {
+        id: 2,
+        image: "images/category/toners/3.webp",
+        title: "Azelaic 10 + Hyaluron Redness Soothing Pad",
+        text: "Soothing toner pads that calm redness and hydrate sensitive skin.",
+        price: 17,
+        brand: "Anua",
+        type: "Toner Pad",
+        specialty: "Azelaic Acid 10% and Hyaluronic Acid",
+        skinType: "Sensitive and Combination Skin",
+        targetProblem: "Redness, Acne Marks, and Dryness"
+    },
+    {
+        id: 3,
+        image: "images/all-products/sunscreens/17.webp",
+        title: "Hyalu-Cica Water-Fit Sun Serum SPF50+",
+        text: "Lightweight sunscreen that protects skin while keeping it hydrated.",
+        price: 18,
+        brand: "SKIN1004",
+        type: "Sunscreen",
+        specialty: "Hyaluronic Acid",
+        skinType: "Dry Skin",
+        targetProblem: "UV Protection"
+    },
+    {
+        id: 4,
+        image: "images/all-products/masks/3.jpg",
+        title: "Water Sleeping Mask",
+        text: "An overnight mask that deeply hydrates and refreshes tired skin.",
+        price: 32,
+        brand: "Laneige",
+        type: "Sleeping Mask",
+        specialty: "Squalane",
+        skinType: "All Skin Types",
+        targetProblem: "Dull Skin"
+    },
+    {
+        id: 5,
+        image: "images/all-products/cleansers/7.webp",
+        title: "Red Foam Cleanser",
+        text: "A refreshing cleanser that removes impurities and controls oil.",
+        price: 18,
+        brand: "Medicube",
+        type: "Foam Cleanser",
+        specialty: "Salicylic Acid",
+        skinType: "Acne-Prone Skin",
+        targetProblem: "Acne"
+    },
+    {
+        id: 6,
+        image: "images/all-products/serums/5.jpg",
+        title: "Collagen Glow Booster Serum",
+        text: "A collagen serum that helps improve skin firmness and glow.",
+        price: 28,
+        brand: "Medicube",
+        type: "Serum",
+        specialty: "Collagen",
+        skinType: "Dry Skin",
+        targetProblem: "Loss of Elasticity"
+    },
+    {
+        id: 7,
+        image: "images/all-products/moisturizers/6.jpg",
+        title: "Deep Vitamin C Capsule Cream",
+        text: "A brightening moisturizer that helps reduce dullness and dark spots.",
+        price: 29,
+        brand: "Medicube",
+        type: "Moisturizer",
+        specialty: "Vitamin C",
+        skinType: "Combination Skin",
+        targetProblem: "Dark Spots"
+    },
+    {
+        id: 8,
+        image: "images/all-products/serums/9.jpg",
+        title: "Glow Serum Propolis + Niacinamide",
+        text: "A nourishing serum that brightens skin and improves texture.",
+        price: 17,
+        brand: "Beauty of Joseon",
+        type: "Serum",
+        specialty: "Propolis",
+        skinType: "Combination Skin",
+        targetProblem: "Acne Marks"
+    },
+    {
+        id: 9,
+        image: "images/all-products/sunscreens/8.jpg",
+        title: "Relief Sun Rice + Probiotics SPF50+",
+        text: "A lightweight sunscreen that protects and moisturizes skin.",
+        price: 18,
+        brand: "Beauty of Joseon",
+        type: "Sunscreen",
+        specialty: "Rice Extract",
+        skinType: "All Skin Types",
+        targetProblem: "UV Protection"
+    },
+    {
+        id: 10,
+        image: "images/all-products/cleansers/anua-oil.webp",
+        title: "Heartleaf Pore Control Cleansing Oil",
+        text: "A gentle cleansing oil that removes makeup and unclogs pores.",
+        price: 18,
         brand: "Torriden",
-        link: "Mixsoon"
+        type: "Cleansing Oil",
+        specialty: "Heartleaf Extract",
+        skinType: "Acne-Prone Skin",
+        targetProblem: "Blackheads and Clogged Pores"
+    },
+    {
+        id: 11,
+        image: "images/all-products/toners/13.webp",
+        title: "Heartleaf 77% Soothing Toner",
+        text: "A calming toner that hydrates skin and reduces irritation.",
+        price: 22,
+        brand: "Anua",
+        type: "Toner",
+        specialty: "Heartleaf Extract",
+        skinType: "Sensitive Skin",
+        targetProblem: "Redness"
+    },
+    {
+        id: 12,
+        image: "images/all-products/serums/14.webp",
+        title: "Niacinamide 10% + TXA 4% Serum",
+        text: "A brightening serum that helps improve uneven skin tone.",
+        price: 24,
+        brand: "Anua",
+        type: "Serum",
+        specialty: "Niacinamide",
+        skinType: "Combination Skin",
+        targetProblem: "Dark Spots"
+    },
+    {
+        id: 13,
+        image: "images/all-products/ampoules/16.webp",
+        title: "Madagascar Centella Ampoule",
+        text: "A soothing ampoule that calms sensitive skin and provides hydration.",
+        price: 20,
+        brand: "SKIN1004",
+        type: "Ampoule",
+        specialty: "Centella Asiatica",
+        skinType: "Sensitive Skin",
+        targetProblem: "Irritation"
+    },
+    {
+        id: 14,
+        image: "images/all-products/cleansers/18.jpg",
+        title: "Madagascar Centella Light Cleansing Oil",
+        text: "A lightweight cleansing oil that removes makeup gently.",
+        price: 19,
+        brand: "SKIN1004",
+        type: "Cleansing Oil",
+        specialty: "Centella Asiatica",
+        skinType: "Sensitive Skin",
+        targetProblem: "Makeup Removal"
+    },
+    {
+        id: 15,
+        image: "images/all-products/moisturizers/19.webp",
+        title: "Probio-Cica Enrich Cream",
+        text: "A rich moisturizer that repairs and strengthens skin barrier.",
+        price: 24,
+        brand: "SKIN1004",
+        type: "Moisturizer",
+        specialty: "Centella & Ceramide",
+        skinType: "Dry Skin",
+        targetProblem: "Skin Barrier Repair"
+    },
+    {
+        id: 16,
+        image: "images/all-products/lip-care/1.webp",
+        title: "Lip Sleeping Mask Berry",
+        text: "An overnight lip mask that softens and hydrates dry lips.",
+        price: 24,
+        brand: "Laneige",
+        type: "Lip Mask",
+        specialty: "Berry Extract",
+        skinType: "All Skin Types",
+        targetProblem: "Dry Lips"
+    },
+    {
+        id: 17,
+        image: "images/all-products/essences/11.webp",
+        title: "Ginseng Essence Water",
+        text: "A nourishing essence that hydrates and restores skin glow.",
+        price: 19,
+        brand: "Beauty of Joseon",
+        type: "Essence",
+        specialty: "Ginseng",
+        skinType: "Normal Skin",
+        targetProblem: "Dull Skin"
+    },
+    {
+        id: 18,
+        image: "images/all-products/serums/10.jpg",
+        title: "Glow Deep Serum Rice + Alpha-Arbutin",
+        text: "A brightening serum that helps reduce pigmentation.",
+        price: 17,
+        brand: "Beauty of Joseon",
+        type: "Serum",
+        specialty: "Alpha-Arbutin",
+        skinType: "All Skin Types",
+        targetProblem: "Hyperpigmentation"
+    },
+    {
+        id: 19,
+        image: "images/all-products/masks/4.jpg",
+        title: "Heartleaf 70% Intense Calming Cream",
+        text: "A soothing cream that moisturizes and calms irritated skin.",
+        price: 25,
+        brand: "Anua",
+        type: "Moisturizer",
+        specialty: "Heartleaf Extract",
+        skinType: "Sensitive Skin",
+        targetProblem: "Irritation"
+    },
+    {
+        id: 20,
+        image: "images/all-products/sunscreens/5.jpg",
+        title: "Hyalu-Cica Water-Fit Sun Serum",
+        text: "A hydrating sunscreen with lightweight daily protection.",
+        price: 18,
+        brand: "SKIN1004",
+        type: "Sunscreen",
+        specialty: "Hyaluronic Acid",
+        skinType: "Dry Skin",
+        targetProblem: "UV Protection"
     }
+    
 ];
 
 const productContainer = document.getElementById('product-container');
 const filterButtons = document.querySelectorAll('.btn-filter');
+window.saveProduct = function (product) {
+    localStorage.setItem("selectedProduct", JSON.stringify(product));
+};
 
 function renderProducts(productsToDisplay) {
     productContainer.innerHTML = '';
@@ -88,10 +278,10 @@ productsToDisplay.forEach(product => {
             <!-- Flex column layout distributes title space and footer alignment -->
             <div class="card-body d-flex flex-column p-3">
                 <div class="flex-grow-1 mb-3">
-                    <a class="text-decoration-none text-dark hover-color d-block mb-1" href="${product.link || '#'}">
+                    <a class="text-decoration-none text-dark hover-color d-block mb-1" href="product-detail.html" onclick='saveProduct(${JSON.stringify(product)})'>
                         <h5 class="card-title fs-6 fw-bold m-0 hover-color">${product.title}</h5>
                     </a>
-                    <a class="text-decoration-none text-muted d-block" href="${product.link || '#'}">
+                    <a class="text-decoration-none text-muted d-block" href="product-detail.html" onclick='saveProduct(${JSON.stringify(product)})'>
                         <!-- Connected to your text-clamp CSS width rule -->
                         <p class="card-text small text-clamp m-0 hover-color">
                             ${product.text}
@@ -145,5 +335,8 @@ filterButtons.forEach(button => {
     };
 });
 
+function saveProduct(product) {
+  localStorage.setItem("selectedProduct", JSON.stringify(product));
+}
 renderProducts(products);
 setupWishlist();
