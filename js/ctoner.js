@@ -146,6 +146,7 @@ const products = [
 ];
 
 const productContainer = document.getElementById("ctoner-container");
+const searchBox = document.getElementById("searchBox");
 
 // Display products
 
@@ -173,7 +174,11 @@ products.forEach(product => {
                         <p><i class="bi bi-currency-dollar text-danger"></i>${product.price}</p>
                     </div>
                     <div class="justify-content-end">
-                        <a class="hover-color text-dark icon-size" href="#"><i class="bi bi-cart3"></i></a>
+                    <a class="hover-color text-dark icon-size add-cart"
+                    href="#"
+                    data-id="${product.id}">
+                     <i class="bi bi-cart3"></i>
+                    </a> 
                         <a class="hover-color text-dark icon-size" href="#"><i class="bi bi-heart"></i></a>
                     </div>
                 </div>
@@ -189,11 +194,6 @@ function saveProduct(product) {
 }
 
 // Show all products
-displayProducts(products);
-
-// Search
-const searchBox = document.getElementById("searchBox");
-
 searchBox.addEventListener("keyup", function () {
 
   const keyword = this.value.toLowerCase();
@@ -201,74 +201,156 @@ searchBox.addEventListener("keyup", function () {
   const filteredProducts = products.filter(product =>
     product.title.toLowerCase().includes(keyword)
   );
-
-  displayProducts(filteredProducts);
-
 });
 
-productCol.innerHTML = `
-<div class="card card-hight">
+// Search
 
-    <img src="${product.image}" class="card-img-top card-image">
+if(searchBox){
 
-    <div class="card-body">
+    searchBox.addEventListener("keyup", function () {
 
-        <h5>${product.title}</h5>
+        const keyword = this.value.toLowerCase();
 
-        <p>${product.text}</p>
+        const filteredProducts = products.filter(product =>
+            product.title.toLowerCase().includes(keyword)
+        );
 
-        <div class="d-flex justify-content-between align-items-center">
+        productContainer.innerHTML = "";
 
-            <h4 class="text-danger">$${product.price}</h4>
+        filteredProducts.forEach(product => {
 
-            <div>
+            const productCol = document.createElement("div");
 
-                <button class="btn btn-outline-dark add-cart"
+            productCol.classList.add("col");
+
+            productCol.innerHTML = `
+                <div class="card card-hight" id="product-${product.id}">
+                    <a href="product-detail.html"
+                    onclick='saveProduct(${JSON.stringify(product)})'>
+
+                    <img src="${product.image}" 
+                    class="card-img-top card-image">
+
+                    </a>
+
+                    <div class="card-body">
+
+                    <h5 class="card-title">${product.title}</h5>
+
+                    <p class="card-text text-clamp">
+                    ${product.text}
+                    </p>
+
+
+                    <div class="d-flex justify-content-between text-danger mt-3">
+
+                        <p>
+                        <i class="bi bi-currency-dollar"></i>
+                        ${product.price}
+                        </p>
+
+
+                        <a class="hover-color text-dark icon-size add-cart"
+                        href="#"
                         data-id="${product.id}">
-                    <i class="bi bi-cart3"></i>
-                </button>
+                        <i class="bi bi-cart3"></i>
+                        </a>
 
-                <button class="btn btn-outline-danger">
-                    <i class="bi bi-heart"></i>
-                </button>
+                    </div>
 
-            </div>
 
-        </div>
+                    </div>
+                </div>
+            `;
 
-    </div>
 
-</div>
-`;
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            productContainer.appendChild(productCol);
 
-document.addEventListener("click", function (e) {
-
-    const btn = e.target.closest(".add-cart");
-
-    if (!btn) return;
-
-    const id = Number(btn.dataset.id);
-
-    const product = products.find(p => p.id === id);
-
-    const exist = cart.find(item => item.id === id);
-
-    if (exist) {
-
-        exist.quantity++;
-
-    } else {
-
-        cart.push({
-            ...product,
-            quantity: 1
         });
 
-    }
+    });
 
-    localStorage.setItem("cart", JSON.stringify(cart));
+}
 
-    alert("Added to Cart!");
-
+// Handle clicks on cart icons
+document.addEventListener("click", function (e) {
+  const btn = e.target.closest(".add-cart");
+  if (!btn) return;
+  e.preventDefault();
+  const id = Number(btn.dataset.id);
+  AddtoCart(id);
 });
+
+// --- CART STATE ---
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+// --- ADD TO CART FUNCTION ---
+function AddtoCart(id) {
+  const product = products.find(p => p.id === id);
+  if (!product) return;
+
+  const existing = cart.find(item => item.id === id);
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({
+      id: product.id,
+      name: product.title,
+      price: product.price,
+      image: product.image,   // add this line
+      qty: 1
+    });
+    
+  }
+  updateCart();
+}
+
+
+
+
+// --- UPDATE CART PANEL ---
+function updateCart() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  const cartItems = document.getElementById("cartItems");
+  const cartTotal = document.getElementById("cartTotal");
+  const cartCount = document.getElementById("cartCount");
+
+  if (!cartItems || !cartTotal || !cartCount) return;
+
+  cartItems.innerHTML = "";
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    total += item.price * item.qty;
+    cartItems.innerHTML += `
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <span>${item.name} ($${item.price})</span>
+        <div>
+          <button class="btn btn-sm btn-secondary" onclick="changeQty(${index}, -1)">-</button>
+          <span class="mx-2">${item.qty}</span>
+          <button class="btn btn-sm btn-secondary" onclick="changeQty(${index}, 1)">+</button>
+          <button class="btn btn-sm btn-danger" onclick="removeItem(${index})"><i class="bi bi-trash"></i></button>
+        </div>
+      </div>
+    `;
+  });
+
+  cartTotal.textContent = total.toFixed(2);
+  cartCount.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
+}
+
+// --- CHANGE QTY / REMOVE ---
+function changeQty(index, delta) {
+  cart[index].qty += delta;
+  if (cart[index].qty <= 0) cart.splice(index, 1);
+  updateCart();
+}
+
+function removeItem(index) {
+  cart.splice(index, 1);
+  updateCart();
+}
+
+// --- INIT ---
+updateCart();
