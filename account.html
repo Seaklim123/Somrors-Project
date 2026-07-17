@@ -25,8 +25,7 @@
   </head>
 
   <body>
-    <!-- ================= HEADER ================= -->
-
+    <!-- header -->
     <div>
         <nav class="navbar navbar-expand-lg head-bg-color fixed-top">
             <div class="container-fluid">
@@ -54,7 +53,7 @@
                     <div class="offcanvas-body d-lg-flex align-items-lg-center justify-content-lg-end">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 text-start text-lg-center align-items-lg-center gap-lg-3">
                             <li class="nav-item my-2 my-lg-0">
-                                <a class="nav-link hover-color py-lg-0 text-nowrap" href="index.html">Home</a>
+                              <a class="nav-link hover-color py-lg-0 text-nowrap" href="index.html">Home</a>
                             </li>
                             <li class="nav-item my-2 my-lg-0">
                                 <a class="nav-link hover-color py-lg-0 text-nowrap" href="products.html">Products</a>
@@ -71,7 +70,7 @@
                             <li class="d-flex d-lg-inline-flex align-items-center justify-content-start justify-content-lg-center gap-4 mt-4 mt-lg-0 ms-lg-3 pt-3 pt-lg-0 border-top border-lg-0">
                                 <a class="nav-link hover-color icon-size p-0 py-lg-0" href="cart.html"><i class="bi bi-cart3"></i></a>
                                 <a class="nav-link hover-color icon-size p-0 py-lg-0" href="wishlist.html"><i class="bi bi-heart"></i></a>
-                                <a class="nav-link active ​hover-color icon-size p-0 py-lg-0​"​​ aria-current="page" href="account.html"><i class="bi bi-person-circle"></i></a>
+                                <a class="nav-link active hover-color icon-size p-0 py-lg-0" aria-current="page" href="account.html"><i class="bi bi-person-circle"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -79,7 +78,6 @@
             </div>
         </nav>
     </div>
-
     <!-- ================= HERO ================= -->
 
     <section class="account-hero">
@@ -108,14 +106,13 @@
           <div class="card profile-card">
             <div class="card-body text-center">
               <img
-                src="images/user-account/Icon User.png"
+                src="images/account/icon.png"
                 class="profile-img mb-3"
                 alt="User"
               />
 
-              <h5 class="fw-bold">User's Name</h5>
-
-              <p class="text-muted mb-0">user@gmail.com</p>
+              <h5 class="fw-bold profile-username"></h5>
+              <p class="text-muted mb-0 profile-email"></p>
             </div>
           </div>
         </div>
@@ -129,33 +126,30 @@
             >
               <h5 class="mb-0">Personal Information</h5>
 
-              <a href="#" class="edit-link"> Edit </a>
+              <a href="#" class="edit-link" id="editBtn"> Edit </a>
             </div>
 
             <div class="card-body p-0">
               <div class="info-row">
                 <span>Username</span>
-
-                <span>User's Name</span>
+                <span class="display-username"></span>
               </div>
 
               <div class="info-row">
                 <span>Phone Number</span>
-
-                <span>012345678</span>
+                <span class="userPhone display-phone"></span>
               </div>
 
               <div class="info-row border-0">
                 <span>Email</span>
-
-                <span>user@gmail.com</span>
+                <span class="display-email"></span>
               </div>
             </div>
           </div>
 
           <!-- EDIT FORM -->
 
-          <div class="card account-card mt-4">
+          <div class="card account-card mt-4 d-none" id="editFormCard">
             <div class="card-header">Edit Personal Information</div>
 
             <div class="card-body">
@@ -163,13 +157,13 @@
                 <div class="col-md-6 mb-3">
                   <label class="form-label"> Username </label>
 
-                  <input type="text" class="form-control" value="User's Name" />
+                  <input type="text" class="form-control" id="input-username" value="User's Name" />
                 </div>
 
                 <div class="col-md-6 mb-3">
                   <label class="form-label"> Phone Number </label>
 
-                  <input type="text" class="form-control" value="012345678" />
+                  <input type="text" class="form-control" id="input-phone" value="012345678" />
                 </div>
 
                 <div class="col-12 mb-4">
@@ -178,20 +172,25 @@
                   <input
                     type="email"
                     class="form-control"
+                    id="input-email"
                     value="user@gmail.com"
                   />
                 </div>
 
                 <div class="col-12">
-                  <button class="btn btn-dark rounded-pill px-4" id="saveBtn">
+                  <button class="btn btn-dark rounded-pill px-4" id="saveBtn" type="button">
                     Save
                   </button>
 
                   <button
                     class="btn btn-outline-secondary rounded-pill px-4 ms-2"
+                    id="cancelBtn"
+                    type="button"
                   >
                     Cancel
                   </button>
+
+                  <span id="save-feedback" class="ms-3 fw-semibold"></span>
                 </div>
               </div>
             </div>
@@ -209,6 +208,7 @@
                   <input
                     type="password"
                     class="form-control"
+                    id="current-password"
                     placeholder="Enter current password"
                   />
                 </div>
@@ -219,6 +219,7 @@
                   <input
                     type="password"
                     class="form-control"
+                    id="new-password"
                     placeholder="Enter new password"
                   />
                 </div>
@@ -229,6 +230,7 @@
                   <input
                     type="password"
                     class="form-control"
+                    id="confirm-password"
                     placeholder="Confirm password"
                   />
                 </div>
@@ -237,9 +239,12 @@
                   <button
                     class="btn btn-pink rounded-pill px-4"
                     id="updatePassword"
+                    type="button"
                   >
                     Update Password
                   </button>
+
+                  <div id="password-feedback" class="mt-2 fw-semibold"></div>
                 </div>
               </div>
             </div>

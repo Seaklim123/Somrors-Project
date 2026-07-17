@@ -35,6 +35,30 @@ function toggleSaved(product) {
     return !exists; // true if just added, false if just removed
 }
 
+function extractPrice(card) {
+    // Method 1: the dollar-sign icon (used by cfoam.js, chair.js, ctoner.js, brand.js)
+    const currencyIcon = card.querySelector('.bi-currency-dollar');
+    if (currencyIcon && currencyIcon.parentElement) {
+        const digits = currencyIcon.parentElement.textContent.replace(/[^0-9.]/g, '').trim();
+        if (digits) return digits;
+    }
+
+    // Method 2: a literal "$" in its own element next to the number (card.js's newer markup)
+    const dollarEls = Array.from(card.querySelectorAll('span, p, div'))
+        .filter(el => el.textContent.trim() === '$');
+    for (const dollarEl of dollarEls) {
+        const sibling = dollarEl.nextElementSibling;
+        if (sibling) {
+            const digits = sibling.textContent.replace(/[^0-9.]/g, '').trim();
+            if (digits) return digits;
+        }
+    }
+
+    // Method 3: last resort — find "$123" anywhere in the card's text
+    const match = card.textContent.match(/\$\s?(\d+(\.\d+)?)/);
+    return match ? match[1] : '';
+}
+
 // Reads a product's info straight from its rendered card. Every page's
 // cards share .card-title / .card-text / a $ icon for price / an <img>,
 // so this same logic works regardless of which script built the card.
@@ -42,10 +66,7 @@ function extractProductFromCard(card) {
     const img = card.querySelector('img');
     const titleEl = card.querySelector('.card-title');
     const textEl = card.querySelector('.card-text');
-    const currencyIcon = card.querySelector('.bi-currency-dollar');
-    const price = currencyIcon && currencyIcon.parentElement
-        ? currencyIcon.parentElement.textContent.replace(/[^0-9.]/g, '').trim()
-        : '';
+    const price = extractPrice(card);
     const linkEl = card.querySelector('a[href]:not([href="#"])');
 
     const title = titleEl ? titleEl.textContent.trim() : 'Product';
@@ -64,24 +85,21 @@ function extractProductFromCard(card) {
 }
 
 function setHeartVisual(iconEl, saved) {
-    const link = iconEl.closest('a');
+    const wrapper = iconEl.closest('a, button');
+
     if (saved) {
         iconEl.classList.remove('bi-heart');
-        iconEl.classList.add('bi-heart-fill');
-        if (link) {
-            link.classList.remove('hover-color', 'text-dark');
-            link.classList.add('text-danger');
-        } else {
-            iconEl.classList.add('text-danger');
+        iconEl.classList.add('bi-heart-fill', 'active', 'text-danger');
+        if (wrapper) {
+            wrapper.classList.remove('hover-color', 'text-dark', 'text-secondary');
+            wrapper.classList.add('text-danger');
         }
     } else {
-        iconEl.classList.remove('bi-heart-fill');
+        iconEl.classList.remove('bi-heart-fill', 'active', 'text-danger');
         iconEl.classList.add('bi-heart');
-        if (link) {
-            link.classList.remove('text-danger');
-            link.classList.add('hover-color', 'text-dark');
-        } else {
-            iconEl.classList.remove('text-danger');
+        if (wrapper) {
+            wrapper.classList.remove('text-danger');
+            wrapper.classList.add('hover-color', 'text-dark');
         }
     }
 }
