@@ -175,10 +175,13 @@ products.forEach(product => {
                     </div>
                     <div class="justify-content-end">
                     <a class="hover-color text-dark icon-size add-cart"
-                    href="#"
-                    data-id="${product.id}">
-                     <i class="bi bi-cart3"></i>
-                    </a> 
+                      href="#"
+                      data-id="${product.id}"
+                      data-title="${product.title}"
+                      data-price="${product.price}"
+                      data-image="${product.image}">
+                        <i class="bi bi-cart3"></i>
+                    </a>
                         <a class="hover-color text-dark icon-size" href="#"><i class="bi bi-heart"></i></a>
                     </div>
                 </div>
@@ -272,85 +275,6 @@ if(searchBox){
 
 }
 
-// Handle clicks on cart icons
-document.addEventListener("click", function (e) {
-  const btn = e.target.closest(".add-cart");
-  if (!btn) return;
-  e.preventDefault();
-  const id = Number(btn.dataset.id);
-  AddtoCart(id);
-});
-
-// --- CART STATE ---
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-// --- ADD TO CART FUNCTION ---
-function AddtoCart(id) {
-  const product = products.find(p => p.id === id);
-  if (!product) return;
-
-  const existing = cart.find(item => item.id === id);
-  if (existing) {
-    existing.qty++;
-  } else {
-    cart.push({
-      id: product.id,
-      name: product.title,
-      price: product.price,
-      image: product.image,   // add this line
-      qty: 1
-    });
-    
-  }
-  updateCart();
-}
 
 
 
-
-// --- UPDATE CART PANEL ---
-function updateCart() {
-  localStorage.setItem("cart", JSON.stringify(cart));
-
-  const cartItems = document.getElementById("cartItems");
-  const cartTotal = document.getElementById("cartTotal");
-  const cartCount = document.getElementById("cartCount");
-
-  if (!cartItems || !cartTotal || !cartCount) return;
-
-  cartItems.innerHTML = "";
-  let total = 0;
-
-  cart.forEach((item, index) => {
-    total += item.price * item.qty;
-    cartItems.innerHTML += `
-      <div class="d-flex justify-content-between align-items-center mb-2">
-        <span>${item.name} ($${item.price})</span>
-        <div>
-          <button class="btn btn-sm btn-secondary" onclick="changeQty(${index}, -1)">-</button>
-          <span class="mx-2">${item.qty}</span>
-          <button class="btn btn-sm btn-secondary" onclick="changeQty(${index}, 1)">+</button>
-          <button class="btn btn-sm btn-danger" onclick="removeItem(${index})"><i class="bi bi-trash"></i></button>
-        </div>
-      </div>
-    `;
-  });
-
-  cartTotal.textContent = total.toFixed(2);
-  cartCount.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
-}
-
-// --- CHANGE QTY / REMOVE ---
-function changeQty(index, delta) {
-  cart[index].qty += delta;
-  if (cart[index].qty <= 0) cart.splice(index, 1);
-  updateCart();
-}
-
-function removeItem(index) {
-  cart.splice(index, 1);
-  updateCart();
-}
-
-// --- INIT ---
-updateCart();
