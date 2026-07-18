@@ -1,0 +1,13 @@
+#cartItems img {
+  border-radius: 5px;
+}
+
+#cartItems button {
+  line-height: 1;
+}
+
+#cartItems .btn-light {
+  width: 26px;
+  height: 26px;
+  padding: 0;
+}
