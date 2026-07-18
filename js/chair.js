@@ -92,31 +92,60 @@ const productContainer = document.getElementById("chair-container");
 
 products.forEach(product => {
     const productCol = document.createElement('div');
-    productCol.classList.add('col');
-    
+    productCol.className = 'col-12 col-sm-6 col-md-4 col-lg-4 mb-4';
+
     productCol.innerHTML = `
-        <div class="card card-hight" id="product-${product.id}">
-            <img src="${product.image}" class="card-img-top card-image" alt="${product.title}">
-            <div class="card-body">
-                <a class="nav-link active hover-color" aria-current="page" href="#">
-                    <h5 class="card-title">${product.title}</h5>
-                </a>
-                <a class="nav-link hover-color" href="#">
-                    <p class="card-text text-clamp">${product.text}</p>
-                </a>
-                <div class="d-flex justify-content-between text-danger mt-3">
-                    <div class="justify-content-start icon-size">
-                        <p><i class="bi bi-currency-dollar text-danger"></i>${product.price}</p>
+        <div class="card h-100 shadow-sm border" id="product-${product.id}">
+
+            <!-- Product Image -->
+            <div class="position-relative overflow-hidden bg-light" style="padding-top: 100%;">
+                <img src="${product.image}"
+                     class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+                     alt="${product.title}">
+            </div>
+
+            <!-- Card Body -->
+            <div class="card-body d-flex flex-column p-3">
+
+                <!-- Title & Description -->
+                <div class="flex-grow-1 mb-3">
+                    <a class="nav-link hover-color text-dark text-decoration-none p-0 mb-1" href="#">
+                        <h5 class="card-title fs-6 fw-bold m-0">
+                            ${product.title}
+                        </h5>
+                    </a>
+
+                    <a class="nav-link hover-color text-decoration-none text-muted p-0" href="#">
+                        <p class="card-text small text-clamp m-0">
+                            ${product.text}
+                        </p>
+                    </a>
+                </div>
+
+                <!-- Price & Icons -->
+                <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+
+                    <div class="fs-5 fw-bold text-danger d-flex align-items-center">
+                        <p class="m-0">
+                            <i class="bi bi-currency-dollar"></i>${product.price}
+                        </p>
                     </div>
-                    <div class="justify-content-end">
-                        <a class="hover-color text-dark icon-size" href="#"><i class="bi bi-cart3"></i></a>
-                        <a class="hover-color text-dark icon-size" href="#"><i class="bi bi-heart"></i></a>
+
+                    <div class="d-flex gap-3 fs-5">
+                        <a class="hover-color text-dark p-0" href="#">
+                            <i class="bi bi-cart3"></i>
+                        </a>
+
+                        <a class="hover-color text-dark p-0" href="#">
+                            <i class="bi bi-heart"></i>
+                        </a>
                     </div>
+
                 </div>
             </div>
         </div>
     `;
-    
+
     productContainer.appendChild(productCol);
 });
 
