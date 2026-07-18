@@ -25,12 +25,22 @@
             <div class="container-fluid">
                 <form action="/search" method="GET" class="d-flex align-items-center flex-grow-1 me-2" style="max-width: 450px;">
                     <img src="images/logo-v.png" alt="Logo" class="logo me-2" style="max-height: 80px;">
+
                     <div class="position-relative flex-grow-1">
-                        <input name="query" class="form-control pe-5 border-10 bg-light" type="search" placeholder="Search" aria-label="Search" />
-                        <button class="btn position-absolute top-50 end-0 translate-middle-y border-0 bg-transparent me-2 px-2" type="submit">
+                        <input
+                            id="searchInput"
+                            name="query"
+                            class="form-control pe-5 border-10 bg-light"
+                            type="search"
+                            placeholder="Search products..."
+                            aria-label="Search"
+                        />
+                    
+                        <button class="btn position-absolute top-50 end-0 translate-middle-y border-0 bg-transparent me-2 px-2" type="button">
                             <i class="bi bi-search"></i>
                         </button>
-                    </div>              
+                    </div> 
+
                 </form>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
