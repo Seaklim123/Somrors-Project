@@ -1,114 +1,113 @@
 import { setupWishlist } from "./wistlist.js";
 var products = [
     {
-            id: 1,
-            image: "images/all-products/cleansers/anua-oil.webp",
-            title: "Anua",
-            text: "Anua Heartleaf Pore Control Cleansing Oil",
-            price: 18,
-            brand: "Anua",
-            type: "Cleansing Oil",
-            specialty: "Heartleaf Extract",
-            skinType: "Acne-Prone Skin",
-            targetProble: "Blackheads and Clogged Pores"
-      },
-      {
-            id: 2,
-            image: "images/all-products/lip-care/1.webp",
-            title: "Laneige",
-            text: "Laneige Lip Sleeping Mask Berry",
-            price: 24,
-            brand: "Laneige",
-            type: "Lip Mask",
-            specialty: "Berry Extract",
-            skinType: "All Skin Types",
-            targetProblem: "Dry Lips"
-      },
-      {
-            id: 3,
-            image: "images/all-products/toners/2.webp",
-            title: "Laneige",
-            text: "Laneige Cream Skin Cerapeptide Refiner",
-            price: 30,
-            brand: "Laneige",
-            type: "Toner",
-            specialty: "Cerapeptide",
-            skinType: "Sensitive Skin",
-            targetProblem: "Dryness"
-      },
-      {
-            id: 4,
-            image: "images/all-products/masks/3.jpg",
-            title: "Laneige",
-            text: "Laneige Water Sleeping Mask",
-            price: 32,
-            brand: "Laneige",
-            type: "Sleeping Mask",
-            specialty: "Squalane",
-            skinType: "All Skin Types",
-            targetProblem: "Dull Skin"
-      },
-
-      {
-            id: 5,
-            image: "images/all-products/toners/4.webp",
-            title: "Medicube",
-            text: "Medicube Zero Pore Pad 2.0",
-            price: 25,
-            brand: "Medicube",
-            type: "Toner Pad",
-            specialty: "AHA & BHA",
-            skinType: "Oily Skin",
-            targetProblem: "Large Pores"
-      },
-      {
-            id: 6,
-            image: "images/all-products/serums/5.jpg",
-            title: "Medicube",
-            text: "Medicube Collagen Glow Booster Serum",
-            price: 28,
-            brand: "Medicube",
-            type: "Serum",
-            specialty: "Collagen",
-            skinType: "Dry Skin",
-            targetProblem: "Loss of Elasticity"
-      },
-      {
-            id: 7,
-            image: "images/all-products/moisturizers/6.jpg",
-            title: "Medicube",
-            text: "Medicube Deep Vitamin C Capsule Cream",
-            price: 29,
-            brand: "Medicube",
-            type: "Moisturizer",
-            specialty: "Vitamin C",
-            skinType: "Combination Skin",
-            targetProblem: "Dark Spots"
-      },
-      {
-            id: 8,
-            image: "images/all-products/cleansers/7.webp",
-            title: "Medicube",
-            text: "Medicube Red Foam Cleanser",
-            price: 18,
-            brand: "Medicube",
-            type: "Foam Cleanser",
-            specialty: "Salicylic Acid",
-            skinType: "Acne-Prone Skin",
-            targetProblem: "Acne"
-      },
-      {
-            id: 9,
-            image: "images/all-products/sunscreens/8.jpg",
-            title: "Beauty of Joseon",
-            text: "Relief Sun Rice + Probiotics SPF50+",
-            price: 18,
-            brand: "Beauty of Joseon",
-            type: "Sunscreen",
-            specialty: "Rice Extract",
-            skinType: "All Skin Types",
-            targetProblem: "UV Protection"
-      }
+        id: 1,
+        image: "images/all-products/cleansers/anua-oil.webp",
+        title: "Heartleaf Pore Control Cleansing Oil",
+        text: "A gentle cleansing oil that removes makeup, sunscreen, and impurities with heartleaf extract.",
+        price: 18,
+        brand: "Anua",
+        type: "Cleansing Oil",
+        specialty: "Heartleaf Extract",
+        skinType: "Acne-Prone Skin",
+        targetProblem: "Blackheads and Clogged Pores"
+    },
+    {
+        id: 2,
+        image: "images/all-products/lip-care/1.webp",
+        title: "Lip Sleeping Mask Berry",
+        text: "An overnight lip mask that deeply nourishes and softens dry, chapped lips.",
+        price: 24,
+        brand: "Laneige",
+        type: "Lip Mask",
+        specialty: "Berry Extract",
+        skinType: "All Skin Types",
+        targetProblem: "Dry Lips"
+    },
+    {
+        id: 3,
+        image: "images/all-products/toners/2.webp",
+        title: "Cream Skin Cerapeptide Refiner",
+        text: "A moisturizing toner enriched with ceramides and peptides to strengthen the skin barrier.",
+        price: 30,
+        brand: "Laneige",
+        type: "Toner",
+        specialty: "Cerapeptide",
+        skinType: "Sensitive Skin",
+        targetProblem: "Dryness"
+    },
+    {
+        id: 4,
+        image: "images/all-products/masks/3.jpg",
+        title: "Water Sleeping Mask",
+        text: "An overnight sleeping mask that hydrates and revitalizes dull, tired-looking skin.",
+        price: 32,
+        brand: "Laneige",
+        type: "Sleeping Mask",
+        specialty: "Squalane",
+        skinType: "All Skin Types",
+        targetProblem: "Dull Skin"
+    },
+    {
+        id: 5,
+        image: "images/all-products/toners/4.webp",
+        title: "Zero Pore Pad 2.0",
+        text: "Exfoliating toner pads with AHA and BHA that help minimize pores and smooth skin texture.",
+        price: 25,
+        brand: "Medicube",
+        type: "Toner Pad",
+        specialty: "AHA & BHA",
+        skinType: "Oily Skin",
+        targetProblem: "Large Pores"
+    },
+    {
+        id: 6,
+        image: "images/all-products/serums/5.jpg",
+        title: "Collagen Glow Booster Serum",
+        text: "A lightweight serum that boosts hydration and improves skin elasticity for a radiant glow.",
+        price: 28,
+        brand: "Medicube",
+        type: "Serum",
+        specialty: "Collagen",
+        skinType: "Dry Skin",
+        targetProblem: "Loss of Elasticity"
+    },
+    {
+        id: 7,
+        image: "images/all-products/moisturizers/6.jpg",
+        title: "Deep Vitamin C Capsule Cream",
+        text: "A brightening moisturizer infused with Vitamin C capsules to reduce dark spots and even skin tone.",
+        price: 29,
+        brand: "Medicube",
+        type: "Moisturizer",
+        specialty: "Vitamin C",
+        skinType: "Combination Skin",
+        targetProblem: "Dark Spots"
+    },
+    {
+        id: 8,
+        image: "images/all-products/cleansers/7.webp",
+        title: "Red Foam Cleanser",
+        text: "A deep-cleansing foam that removes excess oil while helping prevent acne breakouts.",
+        price: 18,
+        brand: "Medicube",
+        type: "Foam Cleanser",
+        specialty: "Salicylic Acid",
+        skinType: "Acne-Prone Skin",
+        targetProblem: "Acne"
+    },
+    {
+        id: 9,
+        image: "images/all-products/sunscreens/8.jpg",
+        title: "Relief Sun Rice + Probiotics SPF50+",
+        text: "A lightweight sunscreen that provides broad-spectrum SPF50+ protection while keeping skin hydrated.",
+        price: 18,
+        brand: "Beauty of Joseon",
+        type: "Sunscreen",
+        specialty: "Rice Extract",
+        skinType: "All Skin Types",
+        targetProblem: "UV Protection"
+    }
 ];
 
 const productContainer = document.getElementById('product-container');
