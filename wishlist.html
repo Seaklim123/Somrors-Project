@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="css/home.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/wishlist.css" />
+    <link rel="stylesheet" href="css/category.css">
   </head>
 
   <body>
@@ -31,12 +32,21 @@
             <div class="container-fluid">
                 <form action="/search" method="GET" class="d-flex align-items-center flex-grow-1 me-2" style="max-width: 450px;">
                     <img src="images/logo-v.png" alt="Logo" class="logo me-2" style="max-height: 80px;">
-                    <div class="position-relative flex-grow-1">
-                        <input name="query" class="form-control pe-5 border-10 bg-light" type="search" placeholder="Search" aria-label="Search" />
-                        <button class="btn position-absolute top-50 end-0 translate-middle-y border-0 bg-transparent me-2 px-2" type="submit">
+                    <div class="position-relative flex-grow-1 d-sm-flex">
+                        <input
+                            id="searchInput"
+                            name="query"
+                            class="form-control pe-5 border-10 bg-light"
+                            type="search"
+                            placeholder="Search products..."
+                            aria-label="Search"
+                        />
+                    
+                        <button class="btn position-absolute top-50 end-0 translate-middle-y border-0 bg-transparent me-2 px-2" type="button">
                             <i class="bi bi-search"></i>
                         </button>
-                    </div>              
+                    </div> 
+
                 </form>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -56,7 +66,7 @@
                                 <a class="nav-link hover-color py-lg-0 text-nowrap" href="index.html">Home</a>
                             </li>
                             <li class="nav-item my-2 my-lg-0">
-                                <a class="nav-link hover-color py-lg-0 text-nowrap" href="products.html">Products</a>
+                                <a class="nav-link hover-color py-lg-0 text-nowrap" href="all-products.html">Products</a>
                             </li>
                             <li class="nav-item my-2 my-lg-0">
                                 <a class="nav-link hover-color py-lg-0 text-nowrap" href="category.html">Category</a>
@@ -68,9 +78,19 @@
                                 <a class="nav-link hover-color py-lg-0 text-nowrap" href="about-us.html">About us</a>
                             </li>
                             <li class="d-flex d-lg-inline-flex align-items-center justify-content-start justify-content-lg-center gap-4 mt-4 mt-lg-0 ms-lg-3 pt-3 pt-lg-0 border-top border-lg-0">
-                                <a class="nav-link hover-color icon-size p-0 py-lg-0" href="cart.html"><i class="bi bi-cart3"></i></a>
-                                <a class="nav-link active hover-color icon-size p-0 py-lg-0" aria-current="page" href="wishlist.html"><i class="bi bi-heart-fill"></i></a>
-                                <a class="nav-link hover-color icon-size p-0 py-lg-0" href="account.html"><i class="bi bi-person-circle"></i></a>
+                                <a class="nav-link position-relative p-0 "
+                                    href="#"
+                                    data-bs-toggle="offcanvas"
+                                    data-bs-target="#cartPanel"
+                                    aria-controls="cartPanel">
+                                    <i class="bi bi-cart3 fs-4 text-dark"></i>
+                                    <span id="cartCount" 
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill cart-badge">
+                                        0
+                                    </span>
+                                </a>
+                                <a class="nav-link active hover-color icon-size p-0 py-lg-0" aria-current="page" href="wishlist.html"><b><i class="bi bi-heart"></i></b></a>
+                                <span id="accountMenu"></span>
                             </li>
                         </ul>
                     </div>
@@ -107,6 +127,39 @@
       </div>
     </div>
 
+    <!-- Shopping Cart -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartPanel">
+        <div class="offcanvas-header">
+            <h4 class="offcanvas-title">
+                <i class="bi bi-cart3"></i> Your Shopping Cart
+            </h4>
+            <button type="button"
+                    class="btn-close"
+                    data-bs-dismiss="offcanvas"></button>
+        </div>
+
+        <div class="offcanvas-body">
+
+            <div class="d-flex justify-content-between mb-3">
+                <h5>Total:</h5>
+                <h5 class="text-danger">$<span id="cartTotal">0.00</span></h5>
+            </div>
+
+            <!-- Products -->
+            <div id="cartItems" class="border rounded-4 p-3">
+                <!-- cart.js will insert items here -->
+            </div>
+
+            <div class="text-center mt-4">
+                <button class="btn btn-checkout px-5">
+                    Checkout
+                </button>
+            </div>
+
+        </div>
+    
+    </div>
+
     <!-- footer -->
     <div class="footer mt-auto">
         <div class="container">
@@ -131,5 +184,7 @@
 
     <script type="module" src="js/wistlist.js"></script>
     <script type="module" src="js/wishlist-render.js"></script>
+    <script type="module" src="js/add-to-cart.js"></script>
+    <script type="module" src="js/account.js"></script>
   </body>
 </html>

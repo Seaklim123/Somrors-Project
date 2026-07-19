@@ -89,7 +89,37 @@
         </div>
     </div>
   
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartPanel">
+        <div class="offcanvas-header">
+            <h4 class="offcanvas-title">
+                <i class="bi bi-cart3"></i> Your Shopping Cart
+            </h4>
+            <button type="button"
+                    class="btn-close"
+                    data-bs-dismiss="offcanvas"></button>
+        </div>
 
+        <div class="offcanvas-body">
+
+            <div class="d-flex justify-content-between mb-3">
+                <h5>Total:</h5>
+                <h5 class="text-danger">$<span id="cartTotal">0.00</span></h5>
+            </div>
+
+            <!-- Products -->
+            <div id="cartItems" class="border rounded-4 p-3">
+                <!-- cart.js will insert items here -->
+            </div>
+
+            <div class="text-center mt-4">
+                <button class="btn btn-checkout px-5">
+                    Checkout
+                </button>
+            </div>
+
+        </div>
+    
+    </div>
        <!-- footer -->
     <div class="footer mt-auto">
       <div class="container">
@@ -128,6 +158,8 @@
     </div>
 
     <script src="js/category.js"></script>
+    <script type="module" src="js/account.js"></script>
+    <script type="module" src="js/add-to-cart.js"></script>
 
 </body>
 </html>
